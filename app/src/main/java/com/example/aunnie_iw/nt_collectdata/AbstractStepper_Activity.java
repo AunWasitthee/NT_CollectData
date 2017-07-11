@@ -10,6 +10,7 @@ import com.stepstone.stepper.StepperLayout;
 import com.stepstone.stepper.VerificationError;
 
 import adapter.FragmentStepAdapter;
+import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**

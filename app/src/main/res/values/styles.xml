@@ -59,15 +59,15 @@
     </style>
 
     <style name="CustomBackButtonStyle" parent="MSNavBarButton.Back">
-        <item name="fontPath">fonts/Oswald-Stencbab.ttf</item>
+
     </style>
 
     <style name="CustomNextButtonStyle" parent="MSNavBarButton.Next">
-        <item name="fontPath">fonts/Oswald-Stencbab.ttf</item>
+
     </style>
 
     <style name="CustomCompleteButtonStyle" parent="MSNavBarButton.Complete">
-        <item name="fontPath">fonts/Oswald-Stencbab.ttf</item>
+
     </style>
 
     <style name="CenteredCompleteButtonStyle" parent="MSNavBarButton.Complete">
@@ -84,7 +84,7 @@
 
     <style name="DarkStepTabTitleStyle" parent="MSStepTabTitle">
         <item name="android:textColor">@color/ms_white</item>
-        <item name="fontPath">fonts/Oswald-Stencbab.ttf</item>
+
     </style>
 
 

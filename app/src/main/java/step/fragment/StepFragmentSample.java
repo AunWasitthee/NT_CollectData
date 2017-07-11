@@ -20,6 +20,8 @@ import com.example.aunnie_iw.nt_collectdata.R;
 import com.stepstone.stepper.Step;
 import com.stepstone.stepper.VerificationError;
 
+import butterknife.Bind;
+
 public class StepFragmentSample extends ButterKnifeFragment implements Step {
 
     private static final String CLICKS_KEY = "clicks";
@@ -92,7 +94,7 @@ public class StepFragmentSample extends ButterKnifeFragment implements Step {
 
     @Override
     public void onError(@NonNull VerificationError error) {
-        button.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.shake_error));
+       // button.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.shake_error));
     }
 
     private void updateNavigationBar() {

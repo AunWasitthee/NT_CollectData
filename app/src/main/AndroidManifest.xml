@@ -22,6 +22,8 @@
         <activity android:name=".Menu_Activity"></activity>
         <activity android:name=".History_Activity"></activity>
         <activity android:name=".AddUpdateUser_Activity"></activity>
+        <activity android:name=".StepAdd_Activity"></activity>
+
     </application>
 
 </manifest>
