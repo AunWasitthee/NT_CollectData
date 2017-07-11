@@ -9,7 +9,7 @@ import android.widget.Toast;
 import com.stepstone.stepper.StepperLayout;
 import com.stepstone.stepper.VerificationError;
 
-import adapter.FragmentStepAdapter;
+import com.example.aunnie_iw.nt_collectdata.adapter.FragmentStepAdapter;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 

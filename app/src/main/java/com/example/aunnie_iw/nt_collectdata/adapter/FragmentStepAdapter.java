@@ -1,4 +1,4 @@
-package adapter;
+package com.example.aunnie_iw.nt_collectdata.adapter;
 
 import android.content.Context;
 import android.support.annotation.IntRange;
@@ -10,7 +10,7 @@ import com.stepstone.stepper.Step;
 import com.stepstone.stepper.adapter.AbstractFragmentStepAdapter;
 import com.stepstone.stepper.viewmodel.StepViewModel;
 
-import step.fragment.StepFragmentSample;
+import com.example.aunnie_iw.nt_collectdata.step.StepFragmentSample;
 
 /**
  * Created by Aunnie-IW on 11/7/2560.

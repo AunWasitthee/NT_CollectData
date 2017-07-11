@@ -1,24 +1,23 @@
-package step.fragment;
+package com.example.aunnie_iw.nt_collectdata.step;
+
+/**
+ * Created by DzDeZeeD on 7/11/2017.
+ */
 
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.text.Html;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.TextView;
 
-import com.example.aunnie_iw.nt_collectdata.OnNavigationBarListener;
 import com.example.aunnie_iw.nt_collectdata.R;
 import com.stepstone.stepper.Step;
 import com.stepstone.stepper.VerificationError;
+import com.example.aunnie_iw.nt_collectdata.OnNavigationBarListener;
 
 import butterknife.Bind;
 
@@ -81,6 +80,7 @@ public class StepFragmentSample extends ButterKnifeFragment implements Step {
     @Override
     public VerificationError verifyStep() {
         return isAboveThreshold() ? null : new VerificationError("Click " + (TAP_THRESHOLD - i) + " more times!");
+        //return null;
     }
 
     private boolean isAboveThreshold() {
@@ -94,7 +94,7 @@ public class StepFragmentSample extends ButterKnifeFragment implements Step {
 
     @Override
     public void onError(@NonNull VerificationError error) {
-       // button.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.shake_error));
+        button.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.shake_error));
     }
 
     private void updateNavigationBar() {
@@ -110,4 +110,3 @@ public class StepFragmentSample extends ButterKnifeFragment implements Step {
     }
 
 }
-
