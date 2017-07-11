@@ -25,8 +25,9 @@ public class FragmentStepAdapter extends AbstractFragmentStepAdapter {
     @NonNull
     @Override
     public StepViewModel getViewModel(@IntRange(from = 0) int position) {
+        CharSequence[] itemTopic = {"ข้อมูลทั่วไป","ที่อยู่","ผู้ติดต่อ","โรค","ความผิดปกติ","วัสดุ"};
         return new StepViewModel.Builder(context)
-                .setTitle("555")
+                .setTitle(itemTopic[position])
                 .create();
     }
 
@@ -36,9 +37,15 @@ public class FragmentStepAdapter extends AbstractFragmentStepAdapter {
             case 0:
                 return StepFragmentSample.newInstance(R.layout.fragment_step1);
             case 1:
-                return StepFragmentSample.newInstance(R.layout.fragment_step1);
+                return StepFragmentSample.newInstance(R.layout.fragment_step2);
             case 2:
-                return StepFragmentSample.newInstance(R.layout.fragment_step1);
+                return StepFragmentSample.newInstance(R.layout.fragment_step3);
+            case 3:
+                return StepFragmentSample.newInstance(R.layout.fragment_step4);
+            case 4:
+                return StepFragmentSample.newInstance(R.layout.fragment_step5);
+            case 5:
+                return StepFragmentSample.newInstance(R.layout.fragment_step6);
             default:
                 throw new IllegalArgumentException("Unsupported position: " + position);
         }
@@ -46,6 +53,6 @@ public class FragmentStepAdapter extends AbstractFragmentStepAdapter {
 
     @Override
     public int getCount() {
-        return 3;
+        return 6;
     }
 }
