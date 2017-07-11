@@ -34,8 +34,8 @@ public class Menu_Activity extends AppCompatActivity {
         BAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent intent = new Intent(Menu_Activity.this,.class);
-                //startActivity(intent);
+                Intent intent = new Intent(Menu_Activity.this,AddUpdateUser_Activity.class);
+                startActivity(intent);
             }
         });
     }
