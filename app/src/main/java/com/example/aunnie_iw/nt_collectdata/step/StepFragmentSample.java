@@ -1,7 +1,7 @@
 package com.example.aunnie_iw.nt_collectdata.step;
 
 /**
- * Created by DzDeZeeD on 7/11/2017.
+ * Created by Aunnie-IW on 7/11/2017.
  */
 
 import android.content.Context;
@@ -31,8 +31,8 @@ public class StepFragmentSample extends ButterKnifeFragment implements Step {
 
     private int i = 0;
 
-    @Bind(R.id.button)
-    Button button;
+//    @Bind(R.id.button)
+//    Button button;
 
     @Nullable
     private OnNavigationBarListener onNavigationBarListener;
@@ -62,14 +62,14 @@ public class StepFragmentSample extends ButterKnifeFragment implements Step {
 
         updateNavigationBar();
 
-        button.setText(Html.fromHtml("Taps: <b>" + i + "</b>"));
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                button.setText(Html.fromHtml("Taps: <b>" + (++i) + "</b>"));
-                updateNavigationBar();
-            }
-        });
+//        button.setText(Html.fromHtml("Taps: <b>" + i + "</b>"));
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                button.setText(Html.fromHtml("Taps: <b>" + (++i) + "</b>"));
+//                updateNavigationBar();
+//            }
+//        });
     }
 
     @Override
@@ -79,8 +79,10 @@ public class StepFragmentSample extends ButterKnifeFragment implements Step {
 
     @Override
     public VerificationError verifyStep() {
-        return isAboveThreshold() ? null : new VerificationError("Click " + (TAP_THRESHOLD - i) + " more times!");
-        //return null;
+
+
+        //return isAboveThreshold() ? null : new VerificationError("Click " + (TAP_THRESHOLD - i) + " more times!");
+        return null;
     }
 
     private boolean isAboveThreshold() {
@@ -94,7 +96,7 @@ public class StepFragmentSample extends ButterKnifeFragment implements Step {
 
     @Override
     public void onError(@NonNull VerificationError error) {
-        button.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.shake_error));
+//        button.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.shake_error));
     }
 
     private void updateNavigationBar() {
