@@ -54,7 +54,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="ส่วนสูง" />
+                            android:text="ส่วนสูง"
+                            android:textSize="18sp" />
 
                         <EditText
                             android:id="@+id/editText10"
@@ -70,7 +71,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="เซนติเมตร" />
+                            android:text="เซนติเมตร"
+                            android:textSize="18sp" />
 
                     </LinearLayout>
 
@@ -84,7 +86,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="น้ำหนัก" />
+                            android:text="น้ำหนัก"
+                            android:textSize="18sp" />
 
                         <EditText
                             android:id="@+id/editText6"
@@ -100,7 +103,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="กิโลกรัม" />
+                            android:text="กิโลกรัม"
+                            android:textSize="18sp" />
 
                     </LinearLayout>
 
@@ -114,7 +118,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="อัชนีมวลกาย" />
+                            android:text="อัชนีมวลกาย"
+                            android:textSize="18sp" />
 
                         <EditText
                             android:id="@+id/editText7"
@@ -130,7 +135,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="กิโลกรัม/เมตร^2" />
+                            android:text="กิโลกรัม/เมตร^2"
+                            android:textSize="18sp" />
 
                     </LinearLayout>
 
@@ -144,13 +150,15 @@
                             android:id="@+id/checkBox8"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/None_Disease" />
+                            android:text="@string/None_Disease"
+                            android:textSize="18sp" />
 
                         <CheckBox
                             android:id="@+id/checkBox7"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/Lower_extremity_amputation" />
+                            android:text="@string/Lower_extremity_amputation"
+                            android:textSize="18sp" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -162,7 +170,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="@string/Neurological_disorders" />
+                                android:text="@string/Neurological_disorders"
+                                android:textSize="18sp" />
 
                             <TextView
                                 android:id="@+id/textView19"
@@ -176,7 +185,8 @@
                             android:id="@+id/checkBox5"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/Peripheral_vascular_disease" />
+                            android:text="@string/Peripheral_vascular_disease"
+                            android:textSize="18sp" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -188,7 +198,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="@string/Inflammatory_joint_disease" />
+                                android:text="@string/Inflammatory_joint_disease"
+                                android:textSize="18sp" />
 
                             <TextView
                                 android:id="@+id/textView20"
@@ -203,19 +214,22 @@
                             android:id="@+id/checkBox3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/Plantar_ulcers" />
+                            android:text="@string/Plantar_ulcers"
+                            android:textSize="18sp" />
 
                         <CheckBox
                             android:id="@+id/checkBox2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/Previous_foot_surgery" />
+                            android:text="@string/Previous_foot_surgery"
+                            android:textSize="18sp" />
 
                         <CheckBox
                             android:id="@+id/checkBox"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/Other_Disease" />
+                            android:text="@string/Other_Disease"
+                            android:textSize="18sp" />
                     </LinearLayout>
 
                 </LinearLayout>

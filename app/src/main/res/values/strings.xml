@@ -4,6 +4,33 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!-- ชุดข้อมูลคำนำหน้า -->
+    <string-array name="TitleName">
+        <item>นาย</item>
+        <item>นาง</item>
+        <item>นางสาว</item>
+        <item>เด็กชาย</item>
+        <item>เด็กหญิง</item>
+        <item>--ความสัมพันธ์--</item>
+    </string-array>
+
+    <!-- ชุดข้อมูลความสัมพันธ์ -->
+    <string-array name="Relationship">
+        <item>พ่อ</item>
+        <item>แม่</item>
+        <item>พี่สาว</item>
+        <item>พี่ชาย</item>
+        <item>น้องสาว</item>
+        <item>น้องชาย</item>
+        <item>ลูก</item>
+        <item>ลุง</item>
+        <item>ป้า</item>
+        <item>ลูปพี่ลูกน้อง</item>
+        <item>ใครก็ไม่รู้</item>
+        <item>--ความสัมพันธ์--</item>
+    </string-array>
+
+
 
     <!-- Disease -->
     <string name="None_Disease">None</string>
