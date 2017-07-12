@@ -12,7 +12,9 @@ import android.widget.EditText;
 
 import com.example.aunnie_iw.nt_collectdata.OnNavigationBarListener;
 import com.example.aunnie_iw.nt_collectdata.R;
+import com.stepstone.stepper.BlockingStep;
 import com.stepstone.stepper.Step;
+import com.stepstone.stepper.StepperLayout;
 import com.stepstone.stepper.VerificationError;
 
 import butterknife.Bind;
