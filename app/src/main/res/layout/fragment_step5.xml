@@ -48,67 +48,67 @@
                         android:id="@+id/checkBox11"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="CheckBox" />
+                        android:text="@string/None_Disorder" />
 
                     <CheckBox
                         android:id="@+id/checkBox10"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="CheckBox" />
+                        android:text="@string/Hallux_valgus" />
 
                     <CheckBox
                         android:id="@+id/checkBox9"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="CheckBox" />
+                        android:text="@string/Claw_hammer_toe" />
 
                     <CheckBox
                         android:id="@+id/checkBox8"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="CheckBox" />
+                        android:text="@string/Tailors_bunion" />
 
                     <CheckBox
                         android:id="@+id/checkBox7"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="CheckBox" />
+                        android:text="@string/Metatarsalgia" />
 
                     <CheckBox
                         android:id="@+id/checkBox6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="CheckBox" />
+                        android:text="@string/Nail_deformity" />
 
                     <CheckBox
                         android:id="@+id/checkBox5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="CheckBox" />
+                        android:text="@string/Flat_feet" />
 
                     <CheckBox
                         android:id="@+id/checkBox4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="CheckBox" />
+                        android:text="@string/Cavus_feet" />
 
                     <CheckBox
                         android:id="@+id/checkBox3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="CheckBox" />
+                        android:text="@string/Foot_pain" />
 
                     <CheckBox
                         android:id="@+id/checkBox2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="CheckBox" />
+                        android:text="@string/Leg_length_discrepancy" />
 
                     <CheckBox
                         android:id="@+id/checkBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="CheckBox" />
+                        android:text="@string/Other_Disorder" />
                 </LinearLayout>
             </LinearLayout>
 

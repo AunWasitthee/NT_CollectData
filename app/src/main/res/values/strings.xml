@@ -3,4 +3,30 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <!-- Disease -->
+    <string name="None_Disease">None</string>
+    <string name="Lower_extremity_amputation">Lower extremity amputation</string>
+    <string name="Neurological_disorders">Neurological disorders</string>
+    <string name="Neurological_disorders_description">(Diabetes mellitus, Stroke, Parkinson’s disease)</string>
+    <string name="Peripheral_vascular_disease">Peripheral vascular disease</string>
+    <string name="Inflammatory_joint_disease">Inflammatory joint disease</string>
+    <string name="Inflammatory_joint_disease_description">(Osteoarthritis, Rheumatoid arthritis, Gouty arthritis)</string>
+    <string name="Plantar_ulcers">Plantar ulcers</string>
+    <string name="Previous_foot_surgery">Previous foot surgery</string>
+    <string name="Other_Disease">Other</string>
+    <!-- Disorder -->
+    <string name="None_Disorder">None</string>
+    <string name="Hallux_valgus">Hallux valgus</string>
+    <string name="Claw_hammer_toe">Claw toes/hammer toe </string>
+    <string name="Tailors_bunion">Tailor’s bunion </string>
+    <string name="Metatarsalgia">Metatarsalgia</string>
+    <string name="Nail_deformity">Nail deformity</string>
+    <string name="Flat_feet">Flat feet </string>
+    <string name="Cavus_feet">Cavus feet</string>
+    <string name="Foot_pain">Foot pain</string>
+    <string name="Plantar_fasciitis">Plantar_fasciitis</string>
+    <string name="Leg_length_discrepancy">Leg length discrepancy</string>
+    <string name="Other_Disorder">Other</string>
 </resources>
