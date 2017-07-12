@@ -60,4 +60,16 @@
         android:layout_marginTop="58dp"
         android:layout_marginLeft="61dp"
         app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/BOpen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Read Data"
+        app:layout_constraintLeft_toLeftOf="@+id/BOk"
+        app:layout_constraintRight_toRightOf="@+id/BOk"
+        app:layout_constraintTop_toBottomOf="@+id/BOk" />
 </android.support.constraint.ConstraintLayout>
