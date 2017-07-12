@@ -1,31 +1,21 @@
 package com.example.aunnie_iw.nt_collectdata.step;
 
-/**
- * Created by Aunnie-IW on 7/11/2017.
- */
-
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.text.Html;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
-import android.view.animation.AnimationUtils;
-import android.widget.Button;
-import android.widget.TextView;
 
-import com.example.aunnie_iw.nt_collectdata.R;
+import com.example.aunnie_iw.nt_collectdata.OnNavigationBarListener;
 import com.stepstone.stepper.Step;
 import com.stepstone.stepper.VerificationError;
-import com.example.aunnie_iw.nt_collectdata.OnNavigationBarListener;
 
-import butterknife.Bind;
+/**
+ * Created by Aunnie-IW on 12/7/2560.
+ */
 
-
-public class StepFragmentSample extends ButterKnifeFragment implements Step {
+public class StepFragment3 extends ButterKnifeFragment implements Step {
 
     private static final String CLICKS_KEY = "clicks";
 
@@ -41,10 +31,10 @@ public class StepFragmentSample extends ButterKnifeFragment implements Step {
     @Nullable
     private OnNavigationBarListener onNavigationBarListener;
 
-    public static StepFragmentSample newInstance(@LayoutRes int layoutResId) {
+    public static StepFragment3 newInstance(@LayoutRes int layoutResId) {
         Bundle args = new Bundle();
         args.putInt(LAYOUT_RESOURCE_ID_ARG_KEY, layoutResId);
-        StepFragmentSample fragment = new StepFragmentSample();
+        StepFragment3 fragment = new StepFragment3();
         fragment.setArguments(args);
         return fragment;
     }

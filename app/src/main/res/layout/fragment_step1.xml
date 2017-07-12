@@ -105,7 +105,7 @@
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/editText2"
+                            android:id="@+id/E_Name"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
 

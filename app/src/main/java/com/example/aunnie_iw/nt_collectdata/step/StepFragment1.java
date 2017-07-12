@@ -1,31 +1,28 @@
 package com.example.aunnie_iw.nt_collectdata.step;
 
-/**
- * Created by Aunnie-IW on 7/11/2017.
- */
-
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.text.Html;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.view.animation.AnimationUtils;
-import android.widget.Button;
-import android.widget.TextView;
+import android.widget.EditText;
 
+import com.example.aunnie_iw.nt_collectdata.OnNavigationBarListener;
 import com.example.aunnie_iw.nt_collectdata.R;
 import com.stepstone.stepper.Step;
 import com.stepstone.stepper.VerificationError;
-import com.example.aunnie_iw.nt_collectdata.OnNavigationBarListener;
 
 import butterknife.Bind;
 
 
-public class StepFragmentSample extends ButterKnifeFragment implements Step {
+/**
+ * Created by Aunnie-IW on 12/7/2560.
+ */
+
+public class StepFragment1 extends ButterKnifeFragment implements Step {
 
     private static final String CLICKS_KEY = "clicks";
 
@@ -35,16 +32,15 @@ public class StepFragmentSample extends ButterKnifeFragment implements Step {
 
     private int i = 0;
 
-//    @Bind(R.id.E_Moo)
-//    TextView E_Moo;
+    @Bind(R.id.E_Name) EditText E_Name;
 
     @Nullable
     private OnNavigationBarListener onNavigationBarListener;
 
-    public static StepFragmentSample newInstance(@LayoutRes int layoutResId) {
+    public static StepFragment1  newInstance(@LayoutRes int layoutResId) {
         Bundle args = new Bundle();
         args.putInt(LAYOUT_RESOURCE_ID_ARG_KEY, layoutResId);
-        StepFragmentSample fragment = new StepFragmentSample();
+        StepFragment1  fragment = new StepFragment1 ();
         fragment.setArguments(args);
         return fragment;
     }
@@ -83,18 +79,19 @@ public class StepFragmentSample extends ButterKnifeFragment implements Step {
 
     @Override
     public VerificationError verifyStep() {
-
+//        return TextUtils.isEmpty(E_Name.getText().toString())
+//                ? new VerificationError("Password cannot be empty")
+//                : null;
 
         return isAboveThreshold() ? null : new VerificationError("Click " + (TAP_THRESHOLD - i) + " more times!");
-        //return null;//return null;
+        //return null;
     }
 
     private boolean isAboveThreshold() {
-//        if(!TextUtils.isEmpty(E_Moo.getText().toString()))
-//            return true;
-//        else
-//            return false;
-        return true;
+        if(!TextUtils.isEmpty(E_Name.getText().toString()))
+            return true;
+        else
+            return false;
     }
 
     @Override
