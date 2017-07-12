@@ -52,7 +52,7 @@
                         <TextView
                             android:id="@+id/textView6"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:text="บ้านเลขที่"
@@ -61,24 +61,17 @@
                         <EditText
                             android:id="@+id/E_Ho"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:ems="10"
                             android:inputType="textPersonName"
                             android:text="Name" />
 
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
                         <TextView
                             android:id="@+id/textView6"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:text="หมู่บ้าน/อาคาร"
@@ -87,7 +80,7 @@
                         <EditText
                             android:id="@+id/editText2"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:ems="10"
@@ -104,7 +97,7 @@
                         <TextView
                             android:id="@+id/textView6"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:text="เลขที่ห้อง"
@@ -113,24 +106,17 @@
                         <EditText
                             android:id="@+id/editText2"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:ems="10"
                             android:inputType="textPersonName"
                             android:text="Name" />
 
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
                         <TextView
                             android:id="@+id/textView6"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:text="ชั้น"
@@ -139,7 +125,7 @@
                         <EditText
                             android:id="@+id/editText2"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:ems="10"
@@ -156,7 +142,7 @@
                         <TextView
                             android:id="@+id/textView6"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:text="หมู่ที่"
@@ -165,24 +151,17 @@
                         <EditText
                             android:id="@+id/E_Moo"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:ems="10"
                             android:inputType="textPersonName"
                             android:text="Name" />
 
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
                         <TextView
                             android:id="@+id/textView6"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:text="ตรอก/ซอย"
@@ -191,7 +170,7 @@
                         <EditText
                             android:id="@+id/editText2"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:ems="10"
@@ -208,7 +187,7 @@
                         <TextView
                             android:id="@+id/textView6"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:text="ตำบล"
@@ -217,24 +196,17 @@
                         <EditText
                             android:id="@+id/editText2"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:ems="10"
                             android:inputType="textPersonName"
                             android:text="Name" />
 
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
                         <TextView
                             android:id="@+id/textView6"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:text="อำเภอ"
@@ -243,7 +215,7 @@
                         <EditText
                             android:id="@+id/editText2"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:ems="10"
@@ -260,7 +232,7 @@
                         <TextView
                             android:id="@+id/textView6"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:text="จังหวัด"
@@ -269,24 +241,17 @@
                         <EditText
                             android:id="@+id/editText2"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:ems="10"
                             android:inputType="textPersonName"
                             android:text="Name" />
 
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
                         <TextView
                             android:id="@+id/textView6"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:text="รหัสไปรษณีย์"
@@ -295,7 +260,7 @@
                         <EditText
                             android:id="@+id/editText2"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:ems="10"
@@ -333,6 +298,240 @@
                             android:layout_weight="4"
                             android:text="ที่เดียวกับบัตรประชาชน" />
                     </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="32dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_weight="1"
+                            android:text="บ้านเลขที่"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/E_Ho"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:inputType="textPersonName"
+                            android:text="Name" />
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_weight="1"
+                            android:text="หมู่บ้าน/อาคาร"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/editText2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:inputType="textPersonName"
+                            android:text="Name" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_weight="1"
+                            android:text="เลขที่ห้อง"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/editText2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:inputType="textPersonName"
+                            android:text="Name" />
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_weight="1"
+                            android:text="ชั้น"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/editText2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:inputType="textPersonName"
+                            android:text="Name" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_weight="1"
+                            android:text="หมู่ที่"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/E_Moo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:inputType="textPersonName"
+                            android:text="Name" />
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_weight="1"
+                            android:text="ตรอก/ซอย"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/editText2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:inputType="textPersonName"
+                            android:text="Name" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_weight="1"
+                            android:text="ตำบล"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/editText2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:inputType="textPersonName"
+                            android:text="Name" />
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_weight="1"
+                            android:text="อำเภอ"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/editText2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:inputType="textPersonName"
+                            android:text="Name" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_weight="1"
+                            android:text="จังหวัด"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/editText2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:inputType="textPersonName"
+                            android:text="Name" />
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_weight="1"
+                            android:text="รหัสไปรษณีย์"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/editText2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:inputType="textPersonName"
+                            android:text="Name" />
+
+                    </LinearLayout>
+
 
                 </LinearLayout>
 

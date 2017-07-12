@@ -32,7 +32,7 @@ public class StepFragment1 extends ButterKnifeFragment implements Step {
 
     private int i = 0;
 
-    @Bind(R.id.E_Name) EditText E_Name;
+    @Bind(R.id.E_FirstName) EditText E_FirstName;
 
     @Nullable
     private OnNavigationBarListener onNavigationBarListener;
@@ -88,7 +88,7 @@ public class StepFragment1 extends ButterKnifeFragment implements Step {
     }
 
     private boolean isAboveThreshold() {
-        if(!TextUtils.isEmpty(E_Name.getText().toString()))
+        if(!TextUtils.isEmpty(E_FirstName.getText().toString()))
             return true;
         else
             return false;

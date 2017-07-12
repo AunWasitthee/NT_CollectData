@@ -9,9 +9,7 @@
         <item>นาย</item>
         <item>นาง</item>
         <item>นางสาว</item>
-        <item>เด็กชาย</item>
-        <item>เด็กหญิง</item>
-        <item>--ความสัมพันธ์--</item>
+        <item>--คำนำหน้า--</item>
     </string-array>
 
     <!-- ชุดข้อมูลความสัมพันธ์ -->

@@ -58,13 +58,14 @@
                             android:textSize="18sp" />
 
                         <TextView
-                            android:id="@+id/textView13"
+                            android:id="@+id/tv_IdCard"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginLeft="8dp"
                             android:layout_marginRight="8dp"
                             android:layout_weight="1"
-                            android:text="เลขประจำตัวประชาชน" />
+                            android:text="เลขประจำตัวประชาชน"
+                            android:textSize="18sp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -82,7 +83,7 @@
                             android:textSize="18sp" />
 
                         <Spinner
-                            android:id="@+id/spinner"
+                            android:id="@+id/S_TitleName"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
 
@@ -105,14 +106,14 @@
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/E_Name"
+                            android:id="@+id/E_FirstName"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
 
                             android:layout_weight="1"
                             android:ems="10"
-                            android:inputType="textPersonName"
-                            android:text="Name" />
+                            android:hint="ชื่อจริง"
+                            android:inputType="textPersonName" />
 
                     </LinearLayout>
 
@@ -131,14 +132,14 @@
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/editText12"
+                            android:id="@+id/E_Lastname"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
 
                             android:layout_weight="1"
                             android:ems="10"
-                            android:inputType="textPersonName"
-                            android:text="Name" />
+                            android:hint="นามสกุล"
+                            android:inputType="textPersonName" />
 
                     </LinearLayout>
 
@@ -157,14 +158,14 @@
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/editText14"
+                            android:id="@+id/E_Birthday"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
 
                             android:layout_weight="1"
                             android:ems="10"
-                            android:inputType="textPersonName"
-                            android:text="Name" />
+                            android:hint="00-00-00"
+                            android:inputType="textPersonName" />
 
                     </LinearLayout>
 
@@ -183,14 +184,14 @@
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/editText13"
+                            android:id="@+id/E_Age"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
 
                             android:layout_weight="1"
                             android:ems="10"
-                            android:inputType="textPersonName"
-                            android:text="Name" />
+                            android:hint="อายุ"
+                            android:inputType="textPersonName" />
 
                     </LinearLayout>
 
@@ -209,12 +210,13 @@
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/editText8"
+                            android:id="@+id/E_Phone"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:ems="10"
-                            android:inputType="textEmailAddress" />
+                            android:hint="เบอร์มือถือ"
+                            android:inputType="textEmailAddress|phone" />
 
                     </LinearLayout>
 
@@ -233,11 +235,12 @@
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/editText9"
+                            android:id="@+id/E_PhoneHome"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:ems="10"
+                            android:hint="เบอร์โทรศัพท์"
                             android:inputType="phone" />
 
                     </LinearLayout>
@@ -257,13 +260,14 @@
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/editText11"
+                            android:id="@+id/E_Email"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
 
                             android:layout_weight="1"
                             android:ems="10"
-                            android:inputType="phone" />
+                            android:hint="abc@example.com"
+                            android:inputType="textEmailAddress" />
 
                     </LinearLayout>
 
