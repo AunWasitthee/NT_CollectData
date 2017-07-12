@@ -15,12 +15,16 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import nectec_stp.code.com.ntcardreader.*;
+
+import com.example.aunnie_iw.nt_collectdata.step.AddressDataObject;
+import com.example.aunnie_iw.nt_collectdata.step.DataObject;
 import com.feitian.readerdk.Tool.DK;
 
 /**
@@ -39,7 +43,8 @@ public class AddUpdateUser_Activity extends AppCompatActivity implements View.On
     private String deviceName;
     /*-------------------------------------------------------------4 */
     protected ImageView Img ;
-
+    protected DataObject dataObject;
+    protected AddressDataObject addressDataObject;
     protected Button BOk;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +52,8 @@ public class AddUpdateUser_Activity extends AppCompatActivity implements View.On
         setContentView(R.layout.activity_add_update_user);
 
         BOk = (Button) findViewById(R.id.BOk);
+        dataObject = new DataObject();
+        addressDataObject = new AddressDataObject();
 
         WhenClickBOk();
 
@@ -198,6 +205,18 @@ public class AddUpdateUser_Activity extends AppCompatActivity implements View.On
                                 mCard.PowerOn();
 /*------------------------------------Auto read-----------------------------------------------------*/
                                 Card card = mCard.read();
+                                dataObject.setFirstNameThai(card.getFirstNameThai());
+                                dataObject.setLastNameThai(card.getLastNameThai());
+                                dataObject.setIDcard(card.getCitizenID());
+                                dataObject.setBirthday(card.getBirthday());
+                                addressDataObject.setHouseNumber(card.getAddress().getHouseNumber());
+                                addressDataObject.setMoo(card.getAddress().getMoo());
+                                addressDataObject.setTambon(card.getAddress().getTambon());
+                                addressDataObject.setAmphur(card.getAddress().getAmphur());
+                                addressDataObject.setProvince(card.getAddress().getProvince());
+                                Log.d("handleMessage: ", "handleMessage: ");
+                                Log.d("handleMessage: ", "handleMessage: ");
+
 //                                Cid.setText(card.getCitizenID()); //รหัสประจำตัวประชาชน
 //                                NameTH.setText(card.getTitleThai()+" "+card.getFirstNameThai()+" "+card.getLastNameThai()); //ชื่อภาษาไทย
 //                                NameEng.setText(card.getTitleEng()+" "+card.getFirstNameEng()+" "+card.getLastNameEng()); //ชื่อภาษาอังกฤษ
