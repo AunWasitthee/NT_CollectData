@@ -32,12 +32,17 @@ public class DataStepFragment1 extends ButterKnifeFragment implements BlockingSt
     }
 
     private DataManager dataManager;
-    @Bind(R.id.tv_IdCard)
-    TextView tv_IdCard;
-    @Bind(R.id.E_FirstName)
-    EditText E_FirstName;
-    @Bind(R.id.S_TitleName)
-    Spinner S_TitleName;
+    @Bind(R.id.tv_IdCard) TextView tv_IdCard;
+
+    @Bind(R.id.S_TitleName) Spinner S_TitleName;
+
+    @Bind(R.id.E_FirstName) EditText E_FirstName;
+    @Bind(R.id.E_Lastname) EditText E_Lastname;
+    @Bind(R.id.E_Birthday) EditText E_Birthday;
+    @Bind(R.id.E_Age) EditText E_Age;
+    @Bind(R.id.E_Tell) EditText E_Tell;
+    @Bind(R.id.E_HomeTell) EditText E_HomeTell;
+    @Bind(R.id.E_Email) EditText E_Email;
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -110,10 +115,16 @@ public class DataStepFragment1 extends ButterKnifeFragment implements BlockingSt
     }
     @Override
     public void onSelected() {
-        tv_IdCard.setText(dataManager.getData());
-        E_FirstName.setText(dataManager.getData2());
-
-
+        if (dataManager!=null) {
+            if (dataManager.getIDcard()!=null)
+                tv_IdCard.setText(dataManager.getIDcard());
+            if (dataManager.getfirstNameThai()!=null)
+                E_FirstName.setText(dataManager.getfirstNameThai());
+            if (dataManager.getlastNameThai()!=null)
+                E_Lastname.setText(dataManager.getlastNameThai());
+            if (dataManager.getbirthday()!=null)
+                E_Birthday.setText(dataManager.getbirthday());
+        }
     }
 
     @Override

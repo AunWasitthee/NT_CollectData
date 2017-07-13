@@ -37,7 +37,6 @@ public class AddressDataObject implements Serializable {
         this.moo = moo;
     }
 
-
     public String getSoi() {
         return this.soi;
     }

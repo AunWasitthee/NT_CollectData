@@ -18,9 +18,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import butterknife.Bind;
 import nectec_stp.code.com.ntcardreader.*;
 
 import com.example.aunnie_iw.nt_collectdata.step.AddressDataObject;
@@ -46,7 +48,9 @@ public class AddUpdateUser_Activity extends AppCompatActivity implements View.On
     protected DataObject dataObject;
     protected AddressDataObject addressDataObject;
     protected Button BOk;
+    @Bind(R.id.E_Search) EditText E_Search;
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_update_user);
@@ -80,6 +84,7 @@ public class AddUpdateUser_Activity extends AppCompatActivity implements View.On
         BOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //dataObject.setIDcard(E_Search.getText().toString());
                 Intent intent = new Intent(AddUpdateUser_Activity.this,StepAddData_Activity.class);
                 intent.putExtra("DataObject", dataObject);
                 intent.putExtra("AddrssDataObject",addressDataObject);
@@ -216,6 +221,7 @@ public class AddUpdateUser_Activity extends AppCompatActivity implements View.On
                                 addressDataObject.setTambon(card.getAddress().getTambon());
                                 addressDataObject.setAmphur(card.getAddress().getAmphur());
                                 addressDataObject.setProvince(card.getAddress().getProvince());
+                                //E_Search.setText(dataObject.getIDcard());
                                 Log.d("handleMessage: ", "handleMessage: ");
                                 Log.d("handleMessage: ", "handleMessage: ");
 

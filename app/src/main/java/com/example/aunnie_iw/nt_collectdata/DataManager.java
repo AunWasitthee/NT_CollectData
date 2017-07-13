@@ -6,7 +6,29 @@ package com.example.aunnie_iw.nt_collectdata;
 
 public interface DataManager {
     void saveData(String data);
-    String getData();
-    String getData2();
+    String getimg();
+    String getIDcard();
+    String getTitleNameThai();
+    String getfirstNameThai();
+    String getlastNameThai();
+    String getbirthday();
+    String gettell();
+    String gethometell();
+    String getemail();
+
+
+    String gethouseNumber();
+    String getBuilding();
+    String getroom();
+    String getfloor();
+    String getmoo();
+    String getsoi();
+    String getroad();
+    String gettambon();
+    String getamphur();
+    String getprovince();
+    String getpostcode();
+
+
 }
 

@@ -30,8 +30,8 @@ public class StepFragment2 extends ButterKnifeFragment implements Step {
 
     private int i = 0;
 
-    @Bind(R.id.E_Moo)
-    TextView E_Moo;
+    @Bind(R.id.E_CardMoo)
+    TextView E_CardMoo;
 
     @Nullable
     private OnNavigationBarListener onNavigationBarListener;
@@ -85,7 +85,7 @@ public class StepFragment2 extends ButterKnifeFragment implements Step {
     }
 
     private boolean isAboveThreshold() {
-        if(!TextUtils.isEmpty(E_Moo.getText().toString()))
+        if(!TextUtils.isEmpty(E_CardMoo.getText().toString()))
             return true;
         else
             return false;

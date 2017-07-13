@@ -160,26 +160,20 @@
                             android:text="@string/Lower_extremity_amputation"
                             android:textSize="18sp" />
 
-                        <LinearLayout
+                        <CheckBox
+                            android:id="@+id/checkBox6"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/Neurological_disorders"
+                            android:textSize="18sp" />
 
-                            <CheckBox
-                                android:id="@+id/checkBox6"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/Neurological_disorders"
-                                android:textSize="18sp" />
-
-                            <TextView
-                                android:id="@+id/textView19"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/Inflammatory_joint_disease_description" />
-                        </LinearLayout>
+                        <TextView
+                            android:id="@+id/textView19"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/Neurological_disorders_description" />
 
                         <CheckBox
                             android:id="@+id/checkBox5"
@@ -188,27 +182,20 @@
                             android:text="@string/Peripheral_vascular_disease"
                             android:textSize="18sp" />
 
-                        <LinearLayout
+                        <CheckBox
+                            android:id="@+id/checkBox4"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/Inflammatory_joint_disease"
+                            android:textSize="18sp" />
 
-                            <CheckBox
-                                android:id="@+id/checkBox4"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/Inflammatory_joint_disease"
-                                android:textSize="18sp" />
-
-                            <TextView
-                                android:id="@+id/textView20"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/Inflammatory_joint_disease_description" />
-
-                        </LinearLayout>
+                        <TextView
+                            android:id="@+id/textView20"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/Inflammatory_joint_disease_description" />
 
                         <CheckBox
                             android:id="@+id/checkBox3"

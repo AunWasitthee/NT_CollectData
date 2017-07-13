@@ -68,12 +68,102 @@ private DataObject dataObject;
         mData = data;
     }
 
-    public String getData() {
-        return dataObject.IDcard();
+    @Override
+    public String getimg() {
+        return dataObject.getImg();
+    }
+
+    public String getIDcard() {
+        return dataObject.getIDcard();
     }
 
     @Override
-    public String getData2() {
+    public String getTitleNameThai() {
+        return dataObject.getTitleNameThai();
+    }
+
+    @Override
+    public String getfirstNameThai() {
         return dataObject.getFirstNameThai();
+    }
+
+    @Override
+    public String getlastNameThai() {
+        return dataObject.getLastNameThai();
+    }
+
+    @Override
+    public String getbirthday() {
+        return dataObject.getBirthday();
+    }
+
+    @Override
+    public String gettell() {
+        return dataObject.getTell();
+    }
+
+    @Override
+    public String gethometell() {
+        return dataObject.getHometell();
+    }
+
+    @Override
+    public String getemail() {
+        return dataObject.getEmail();
+    }
+
+    @Override
+    public String gethouseNumber() {
+        return addressDataObject.getHouseNumber();
+    }
+
+    @Override
+    public String getBuilding() {
+        return null;
+    }
+
+    @Override
+    public String getroom() {
+        return null;
+    }
+
+    @Override
+    public String getfloor() {
+        return null;
+    }
+
+    @Override
+    public String getmoo() {
+        return addressDataObject.getMoo();
+    }
+
+    @Override
+    public String getsoi() {
+        return null;
+    }
+
+    @Override
+    public String getroad() {
+        return null;
+    }
+
+    @Override
+    public String gettambon() {
+        return addressDataObject.getTambon();
+    }
+
+    @Override
+    public String getamphur() {
+        return addressDataObject.getAmphur();
+    }
+
+    @Override
+    public String getprovince() {
+        return addressDataObject.getProvince();
+    }
+
+    @Override
+    public String getpostcode() {
+        return addressDataObject.getPostcode();
     }
 }

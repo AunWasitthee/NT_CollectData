@@ -55,18 +55,18 @@
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
-                            android:text="บ้านเลขที่"
+                            android:text="@string/HouseNumber"
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/E_Ho"
+                            android:id="@+id/E_CardHouseNumber"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:ems="10"
-                            android:inputType="textPersonName"
-                            android:text="Name" />
+                            android:hint="@string/HouseNumber"
+                            android:inputType="textPersonName" />
 
                         <TextView
                             android:id="@+id/textView6"
@@ -74,18 +74,18 @@
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
-                            android:text="หมู่บ้าน/อาคาร"
+                            android:text="@string/Building"
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/editText2"
+                            android:id="@+id/E_CardBuilding"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:ems="10"
-                            android:inputType="textPersonName"
-                            android:text="Name" />
+                            android:hint="@string/Building"
+                            android:inputType="textPersonName" />
 
                     </LinearLayout>
 
@@ -100,18 +100,18 @@
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
-                            android:text="เลขที่ห้อง"
+                            android:text="@string/Room"
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/editText2"
+                            android:id="@+id/E_CardRoom"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:ems="10"
-                            android:inputType="textPersonName"
-                            android:text="Name" />
+                            android:hint="@string/Room"
+                            android:inputType="textPersonName" />
 
                         <TextView
                             android:id="@+id/textView6"
@@ -119,18 +119,18 @@
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
-                            android:text="ชั้น"
+                            android:text="@string/Floor"
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/editText2"
+                            android:id="@+id/E_CardFloor"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:ems="10"
-                            android:inputType="textPersonName"
-                            android:text="Name" />
+                            android:hint="@string/Floor"
+                            android:inputType="textPersonName" />
 
                     </LinearLayout>
 
@@ -145,18 +145,18 @@
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
-                            android:text="หมู่ที่"
+                            android:text="@string/Moo"
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/E_Moo"
+                            android:id="@+id/E_CardMoo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:ems="10"
-                            android:inputType="textPersonName"
-                            android:text="Name" />
+                            android:hint="@string/Moo"
+                            android:inputType="textPersonName" />
 
                         <TextView
                             android:id="@+id/textView6"
@@ -164,18 +164,18 @@
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
-                            android:text="ตรอก/ซอย"
+                            android:text="@string/Soi"
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/editText2"
+                            android:id="@+id/E_CardSoi"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:ems="10"
-                            android:inputType="textPersonName"
-                            android:text="Name" />
+                            android:hint="@string/Soi"
+                            android:inputType="textPersonName" />
 
                     </LinearLayout>
 
@@ -190,18 +190,18 @@
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
-                            android:text="ตำบล"
+                            android:text="@string/Tambon"
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/editText2"
+                            android:id="@+id/E_CardTambon"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:ems="10"
-                            android:inputType="textPersonName"
-                            android:text="Name" />
+                            android:hint="@string/Tambon"
+                            android:inputType="textPersonName" />
 
                         <TextView
                             android:id="@+id/textView6"
@@ -209,18 +209,18 @@
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
-                            android:text="อำเภอ"
+                            android:text="@string/Amphur"
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/editText2"
+                            android:id="@+id/E_CardAmphur"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:ems="10"
-                            android:inputType="textPersonName"
-                            android:text="Name" />
+                            android:hint="@string/Amphur"
+                            android:inputType="textPersonName" />
 
                     </LinearLayout>
 
@@ -235,18 +235,18 @@
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
-                            android:text="จังหวัด"
+                            android:text="@string/Province"
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/editText2"
+                            android:id="@+id/E_CardProvince"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:ems="10"
-                            android:inputType="textPersonName"
-                            android:text="Name" />
+                            android:hint="@string/Province"
+                            android:inputType="textPersonName" />
 
                         <TextView
                             android:id="@+id/textView6"
@@ -254,18 +254,18 @@
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
-                            android:text="รหัสไปรษณีย์"
+                            android:text="@string/PostCode"
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/editText2"
+                            android:id="@+id/E_CardPostCode"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:ems="10"
-                            android:inputType="textPersonName"
-                            android:text="Name" />
+                            android:hint="@string/PostCode"
+                            android:inputType="textPersonName" />
 
                     </LinearLayout>
 
@@ -292,7 +292,7 @@
                             android:textSize="30sp" />
 
                         <CheckBox
-                            android:id="@+id/checkBox12"
+                            android:id="@+id/CB_SameLocation"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="4"
@@ -318,18 +318,18 @@
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
-                            android:text="บ้านเลขที่"
+                            android:text="@string/HouseNumber"
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/E_Ho"
+                            android:id="@+id/E_NowHouseNumber"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:ems="10"
-                            android:inputType="textPersonName"
-                            android:text="Name" />
+                            android:hint="@string/HouseNumber"
+                            android:inputType="textPersonName" />
 
                         <TextView
                             android:id="@+id/textView6"
@@ -337,18 +337,18 @@
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
-                            android:text="หมู่บ้าน/อาคาร"
+                            android:text="@string/Soi"
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/editText2"
+                            android:id="@+id/E_NowBuilding"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:ems="10"
-                            android:inputType="textPersonName"
-                            android:text="Name" />
+                            android:hint="@string/Soi"
+                            android:inputType="textPersonName" />
 
                     </LinearLayout>
 
@@ -363,18 +363,18 @@
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
-                            android:text="เลขที่ห้อง"
+                            android:text="@string/Room"
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/editText2"
+                            android:id="@+id/E_NowRoom"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:ems="10"
-                            android:inputType="textPersonName"
-                            android:text="Name" />
+                            android:hint="@string/Room"
+                            android:inputType="textPersonName" />
 
                         <TextView
                             android:id="@+id/textView6"
@@ -382,18 +382,18 @@
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
-                            android:text="ชั้น"
+                            android:text="@string/Floor"
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/editText2"
+                            android:id="@+id/E_NowFloor"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:ems="10"
-                            android:inputType="textPersonName"
-                            android:text="Name" />
+                            android:hint="@string/Floor"
+                            android:inputType="textPersonName" />
 
                     </LinearLayout>
 
@@ -408,18 +408,18 @@
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
-                            android:text="หมู่ที่"
+                            android:text="@string/Moo"
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/E_Moo"
+                            android:id="@+id/E_NowMoo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:ems="10"
-                            android:inputType="textPersonName"
-                            android:text="Name" />
+                            android:hint="@string/Moo"
+                            android:inputType="textPersonName" />
 
                         <TextView
                             android:id="@+id/textView6"
@@ -427,18 +427,18 @@
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
-                            android:text="ตรอก/ซอย"
+                            android:text="@string/Soi"
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/editText2"
+                            android:id="@+id/E_NowSoi"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:ems="10"
-                            android:inputType="textPersonName"
-                            android:text="Name" />
+                            android:hint="@string/Soi"
+                            android:inputType="textPersonName" />
 
                     </LinearLayout>
 
@@ -453,18 +453,18 @@
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
-                            android:text="ตำบล"
+                            android:text="@string/Tambon"
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/editText2"
+                            android:id="@+id/E_NowTambon"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:ems="10"
-                            android:inputType="textPersonName"
-                            android:text="Name" />
+                            android:hint="@string/Tambon"
+                            android:inputType="textPersonName" />
 
                         <TextView
                             android:id="@+id/textView6"
@@ -472,18 +472,18 @@
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
-                            android:text="อำเภอ"
+                            android:text="@string/Amphur"
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/editText2"
+                            android:id="@+id/E_NowAmphur"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:ems="10"
-                            android:inputType="textPersonName"
-                            android:text="Name" />
+                            android:hint="@string/Amphur"
+                            android:inputType="textPersonName" />
 
                     </LinearLayout>
 
@@ -498,18 +498,18 @@
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
-                            android:text="จังหวัด"
+                            android:text="@string/Province"
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/editText2"
+                            android:id="@+id/E_NowProvince"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:ems="10"
-                            android:inputType="textPersonName"
-                            android:text="Name" />
+                            android:hint="@string/Province"
+                            android:inputType="textPersonName" />
 
                         <TextView
                             android:id="@+id/textView6"
@@ -517,16 +517,17 @@
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
-                            android:text="รหัสไปรษณีย์"
+                            android:text="@string/PostCode"
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/editText2"
+                            android:id="@+id/E_NowPostCode"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
                             android:ems="10"
+                            android:hint="@string/PostCode"
                             android:inputType="textPersonName"
                             android:text="Name" />
 

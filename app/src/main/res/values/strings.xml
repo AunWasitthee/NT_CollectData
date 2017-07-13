@@ -29,6 +29,20 @@
     </string-array>
 
 
+    <!-- Location -->
+    <string name="HouseNumber">บ้านเลขที่</string>
+    <string name="Building">หมู่บ้าน/อาคาร</string>
+    <string name="Room">เลขที่ห้อง</string>
+    <string name="Floor">ชั้น</string>
+    <string name="Moo">หมู่ที่</string>
+    <string name="Soi">ตรอก/ซอย</string>
+    <string name="Road">ถนน</string>
+    <string name="Tambon">ตำบล</string>
+    <string name="Amphur">อำเภอ</string>
+    <string name="Province">จังหวัด</string>
+    <string name="PostCode">รหัสไปรษณีย์</string>
+
+
 
     <!-- Disease -->
     <string name="None_Disease">None</string>

@@ -33,7 +33,7 @@ public class DataObject implements Serializable {
         this.img = img;
     }
 
-    public String IDcard() {
+    public String getIDcard() {
         return this.IDcard;
     }
 

@@ -210,7 +210,7 @@
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/E_Phone"
+                            android:id="@+id/E_Tell"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -235,7 +235,7 @@
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/E_PhoneHome"
+                            android:id="@+id/E_HomeTell"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
