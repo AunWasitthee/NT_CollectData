@@ -528,8 +528,7 @@
                             android:layout_weight="1"
                             android:ems="10"
                             android:hint="@string/PostCode"
-                            android:inputType="textPersonName"
-                            android:text="Name" />
+                            android:inputType="textPersonName" />
 
                     </LinearLayout>
 

@@ -23,6 +23,8 @@ import com.stepstone.stepper.VerificationError;
 import com.example.aunnie_iw.nt_collectdata.DataManager;
 import com.example.aunnie_iw.nt_collectdata.R;
 
+import java.util.Arrays;
+
 import butterknife.Bind;
 
 public class DataStepFragment1 extends ButterKnifeFragment implements BlockingStep {
@@ -32,6 +34,9 @@ public class DataStepFragment1 extends ButterKnifeFragment implements BlockingSt
     }
 
     private DataManager dataManager;
+    private String[] TitleName;
+    private int TitleNamePosition = 0;
+
     @Bind(R.id.tv_IdCard) TextView tv_IdCard;
 
     @Bind(R.id.S_TitleName) Spinner S_TitleName;
@@ -51,70 +56,25 @@ public class DataStepFragment1 extends ButterKnifeFragment implements BlockingSt
         } else {
             throw new IllegalStateException("Activity must implement DataManager interface!");
         }
-       // setSpinnerTitleName(context);
+
     }
 
-//    private void setSpinnerTitleName(Context context) {
-//        /*------------------- Spinner Sex--------------------------------------------------------------------------------------------------*/
-//        String[] TitleName = getResources().getStringArray(R.array.TitleName);
-////        if(people.getProfileData() !=null && people.getProfileData().getSex()!=null){
-////            Sex[Sex.length-1] = people.getProfileData().getSex();
-////        }
-//        //S_TitleName = (Spinner) findViewById(R.id.Sex);
-//        final ArrayAdapter<String> adapterSex = new ArrayAdapter<String>(, android.R.layout.simple_dropdown_item_1line, S_TitleName){
-//            @Override
-//            public View getView(int position, View convertView, ViewGroup parent) {
-//                Log.d(getItem(getCount()), "getView: ");
-//                View v = super.getView(position, convertView, parent);
-//                if (position == getCount()) {
-//                    ((TextView) v.findViewById(android.R.id.text1)).setText(getItem(getCount()));
-//                    ((TextView) v.findViewById(android.R.id.text1)).setTextSize(14);
-//                    //((TextView)v.findViewById(android.R.id.text1)).setHint(getItem(getCount())); //"Hint to be displayed"
-//                }
-//                return v;
-//            }
-//
-//            @Override
-//            public int getCount() {
-//                return super.getCount() - 1; // you dont display last item. It is used as hint.
-//            }
-//        };
-//        S_TitleName.setAdapter(adapterSex);
-//        S_TitleName.setSelection(adapterSex.getCount());
-//        S_TitleName.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//
-//            @Override
-//            public void onItemSelected(AdapterView<?> adapterView, View v, int i, long l)
-//            {
-//                TextView myText = (TextView) v;
-//                Toast.makeText(Profile.this, "You Selected "+myText.getText(), Toast.LENGTH_SHORT).show();
-//                ((TextView) adapterView.getChildAt(0)).setTextSize(14);
-////                if(i==adapterSex.getCount()&&(people.getProfileData()==null||people.getProfileData().getSex()==null)){
-////                    ((TextView) adapterView.getChildAt(0)).setTextColor(Color.RED);
-////                }
-////                else{
-////                    ((TextView) adapterView.getChildAt(0)).setTextColor(Color.BLUE);
-////                }
-//
-//            } // end onItemSelected method
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> adapterView)
-//            {
-//
-//            } // end onNothingSelected method
-//        });
-//    }
+
 
     @Override
     public VerificationError verifyStep() {
         return checkValue() ? null : new VerificationError("Click more times!");
     }
     private boolean checkValue(){
+
+        //f()
         return true;
     }
     @Override
     public void onSelected() {
+        setSpinner();
+        setPositionSpinner();
+
         if (dataManager!=null) {
             if (dataManager.getIDcard()!=null)
                 tv_IdCard.setText(dataManager.getIDcard());
@@ -134,6 +94,8 @@ public class DataStepFragment1 extends ButterKnifeFragment implements BlockingSt
     @Override
     @UiThread
     public void onNextClicked(final StepperLayout.OnNextClickedCallback callback) {
+        TitleNamePosition = S_TitleName.getSelectedItemPosition();
+        dataManager.saveTitleNameThai(S_TitleName.getSelectedItem().toString());
         callback.goToNextStep();
     }
 
@@ -152,4 +114,23 @@ public class DataStepFragment1 extends ButterKnifeFragment implements BlockingSt
     protected int getLayoutResId() {
         return R.layout.fragment_step1;
     }
+
+    public void setSpinner(){
+
+        TitleName = getResources().getStringArray(R.array.TitleName);
+        ArrayAdapter<String> adapterTitleName = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_dropdown_item_1line, TitleName);
+        S_TitleName.setAdapter(adapterTitleName);
+    }
+
+
+    public void setPositionSpinner(){
+        if (dataManager.getTitleNameThai()!=null){
+
+            S_TitleName.setSelection(Arrays.asList(TitleName).indexOf(dataManager.getTitleNameThai()));
+            S_TitleName.setEnabled(false);
+        }
+        else
+            S_TitleName.setSelection(TitleNamePosition);
+    }
+
 }

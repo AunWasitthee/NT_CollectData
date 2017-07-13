@@ -29,7 +29,9 @@ public class StepAddData_Activity extends AppCompatActivity implements DataManag
     StepperLayout mStepperLayout;
 
     private String mData;
-private DataObject dataObject;
+    private String relationship;
+    private String titleContact;
+    private DataObject dataObject;
     private AddressDataObject addressDataObject;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +69,13 @@ private DataObject dataObject;
     public void saveData(String data) {
         mData = data;
     }
+    public void saveTitleContact(String TitleContact){ titleContact = TitleContact;}
+    public void saveRelationship(String Relationship){ relationship = Relationship;}
+
+    @Override
+    public String getTitleContact() {
+        return titleContact;
+    }
 
     @Override
     public String getimg() {
@@ -80,6 +89,11 @@ private DataObject dataObject;
     @Override
     public String getTitleNameThai() {
         return dataObject.getTitleNameThai();
+    }
+
+    @Override
+    public void saveTitleNameThai(String TitleNameThai) {
+        dataObject.setTitleNameThai(TitleNameThai);
     }
 
     @Override

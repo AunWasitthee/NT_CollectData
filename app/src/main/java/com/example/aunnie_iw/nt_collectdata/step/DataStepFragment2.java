@@ -7,6 +7,7 @@ package com.example.aunnie_iw.nt_collectdata.step;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.UiThread;
+import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.example.aunnie_iw.nt_collectdata.DataManager;
@@ -45,6 +46,8 @@ public class DataStepFragment2 extends ButterKnifeFragment implements BlockingSt
     @Bind(R.id.E_NowAmphur) EditText E_NowAmphur;
     @Bind(R.id.E_NowProvince) EditText E_NowProvince;
     @Bind(R.id.E_NowPostCode) EditText E_NowPostCode;
+
+    @Bind(R.id.CB_SameLocation) CheckBox CB_SameLocation;
 
 
     @Override

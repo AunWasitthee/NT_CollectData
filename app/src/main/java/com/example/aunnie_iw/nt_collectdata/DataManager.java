@@ -6,9 +6,12 @@ package com.example.aunnie_iw.nt_collectdata;
 
 public interface DataManager {
     void saveData(String data);
+
     String getimg();
     String getIDcard();
     String getTitleNameThai();
+    void saveTitleNameThai(String TitleNameThai);
+
     String getfirstNameThai();
     String getlastNameThai();
     String getbirthday();
@@ -29,6 +32,8 @@ public interface DataManager {
     String getprovince();
     String getpostcode();
 
-
+    void saveTitleContact(String TitleContact);
+    void saveRelationship(String Relationship);
+    String getTitleContact();
 }
 

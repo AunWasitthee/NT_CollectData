@@ -59,7 +59,7 @@
                             android:textSize="18sp" />
 
                         <Spinner
-                            android:id="@+id/spinner"
+                            android:id="@+id/S_TitleContact"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
@@ -82,7 +82,7 @@
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/editText2"
+                            android:id="@+id/Contactname"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
@@ -134,7 +134,7 @@
                             android:textSize="18sp" />
 
                         <Spinner
-                            android:id="@+id/spinner2"
+                            android:id="@+id/S_Relationship"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 

@@ -48,7 +48,7 @@ public class AddUpdateUser_Activity extends AppCompatActivity implements View.On
     protected DataObject dataObject;
     protected AddressDataObject addressDataObject;
     protected Button BOk;
-    @Bind(R.id.E_Search) EditText E_Search;
+    protected EditText E_Search;
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +58,7 @@ public class AddUpdateUser_Activity extends AppCompatActivity implements View.On
         BOk = (Button) findViewById(R.id.BOk);
         dataObject = new DataObject();
         addressDataObject = new AddressDataObject();
+        E_Search = (EditText) findViewById(R.id.E_Search);
 
         WhenClickBOk();
 
@@ -84,7 +85,9 @@ public class AddUpdateUser_Activity extends AppCompatActivity implements View.On
         BOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //dataObject.setIDcard(E_Search.getText().toString());
+                dataObject.setIDcard(E_Search.getText().toString());
+                //dataObject.setTitleNameThai("นางสาว");
+                Log.d("onClick: ", E_Search.getText().toString());
                 Intent intent = new Intent(AddUpdateUser_Activity.this,StepAddData_Activity.class);
                 intent.putExtra("DataObject", dataObject);
                 intent.putExtra("AddrssDataObject",addressDataObject);
