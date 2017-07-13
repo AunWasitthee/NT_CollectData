@@ -23,6 +23,7 @@
         <activity android:name=".History_Activity"></activity>
         <activity android:name=".AddUpdateUser_Activity"></activity>
         <activity android:name=".StepAdd_Activity"></activity>
+        <activity android:name=".StepAddData_Activity"></activity>
 
     </application>
 

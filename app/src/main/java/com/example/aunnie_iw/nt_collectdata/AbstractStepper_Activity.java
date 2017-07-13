@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.aunnie_iw.nt_collectdata.step.AddressDataObject;
+import com.example.aunnie_iw.nt_collectdata.step.DataObject;
 import com.stepstone.stepper.StepperLayout;
 import com.stepstone.stepper.VerificationError;
 
@@ -23,7 +25,8 @@ public abstract class AbstractStepper_Activity extends AppCompatActivity impleme
         OnNavigationBarListener {
 
     private static final String CURRENT_STEP_POSITION_KEY = "position";
-
+    private DataObject dataObject;
+    private AddressDataObject addressDataObject;
     @Bind(R.id.stepperLayout)
     protected StepperLayout mStepperLayout;
 
@@ -37,7 +40,8 @@ public abstract class AbstractStepper_Activity extends AppCompatActivity impleme
         ButterKnife.bind(this);
         int startingStepPosition = savedInstanceState != null ? savedInstanceState.getInt(CURRENT_STEP_POSITION_KEY) : 0;
         mStepperLayout.setAdapter(new FragmentStepAdapter(getSupportFragmentManager(), this), startingStepPosition);
-
+        dataObject = (DataObject)getIntent().getSerializableExtra("DataObject");
+        addressDataObject = (AddressDataObject)getIntent().getSerializableExtra("AddressDataObject");
         mStepperLayout.setListener(this);
     }
 

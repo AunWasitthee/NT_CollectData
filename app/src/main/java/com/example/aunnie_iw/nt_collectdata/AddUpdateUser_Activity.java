@@ -80,7 +80,9 @@ public class AddUpdateUser_Activity extends AppCompatActivity implements View.On
         BOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AddUpdateUser_Activity.this,StepAdd_Activity.class);
+                Intent intent = new Intent(AddUpdateUser_Activity.this,StepAddData_Activity.class);
+                intent.putExtra("DataObject", dataObject);
+                intent.putExtra("AddrssDataObject",addressDataObject);
                 startActivity(intent);
             }
         });
