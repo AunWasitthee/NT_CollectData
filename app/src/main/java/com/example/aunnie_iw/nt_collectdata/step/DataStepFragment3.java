@@ -7,9 +7,12 @@ package com.example.aunnie_iw.nt_collectdata.step;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.UiThread;
+import android.text.TextUtils;
 import android.util.Log;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.aunnie_iw.nt_collectdata.DataManager;
 import com.example.aunnie_iw.nt_collectdata.R;
@@ -32,8 +35,10 @@ public class DataStepFragment3 extends ButterKnifeFragment implements BlockingSt
 
     @Bind(R.id.S_TitleContact) Spinner S_TitleContact;
     @Bind(R.id.S_Relationship) Spinner S_Relationship;
-
-
+    @Bind(R.id.E_FirstNameContact) EditText E_FirstNameContact;
+    @Bind(R.id.E_LastNameContact) EditText E_LastNameContact;
+    @Bind(R.id.E_TellContact) EditText E_TellContact;
+    @Bind(R.id.E_HomeTellContact) EditText E_HomeTellContact;
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -46,10 +51,20 @@ public class DataStepFragment3 extends ButterKnifeFragment implements BlockingSt
 
     @Override
     public VerificationError verifyStep() {
-        return checkValue() ? null : new VerificationError("Click more times!");
+        return checkValue() ? null : new VerificationError("กรุณากรอกข้อมูลให้ครบถ้วน");
     }
     private boolean checkValue(){
-        return true;
+
+        if (TextUtils.isEmpty(E_FirstNameContact.getText().toString()))
+            return false;
+        else if (TextUtils.isEmpty(E_LastNameContact.getText().toString()))
+            return false;
+        else if (TextUtils.isEmpty(E_TellContact.getText().toString()))
+            return false;
+        else if (TextUtils.isEmpty(E_HomeTellContact.getText().toString()))
+            return false;
+        else
+            return true;
     }
     @Override
     public void onSelected() {
@@ -60,6 +75,7 @@ public class DataStepFragment3 extends ButterKnifeFragment implements BlockingSt
 
     @Override
     public void onError(@NonNull VerificationError error) {
+        Toast.makeText(getActivity(), "onError! -> " + error.getErrorMessage(), Toast.LENGTH_SHORT).show();
     }
 
     @Override

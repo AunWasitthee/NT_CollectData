@@ -67,7 +67,7 @@ public class DataStepFragment1 extends ButterKnifeFragment implements BlockingSt
         return checkValue() ? null : new VerificationError("กรุณากรอกข้อมูลให้ครบถ้วน");
     }
     private boolean checkValue(){
-//Check Location Id Card
+
         if (TextUtils.isEmpty(E_FirstName.getText().toString()))
             return false;
         else if (TextUtils.isEmpty(E_Lastname.getText().toString()))
@@ -143,7 +143,7 @@ public class DataStepFragment1 extends ButterKnifeFragment implements BlockingSt
         if (dataManager.getTitleNameThai()!=null){
             if (!dataManager.getTitleNameThai().equals("")) {
                 S_TitleName.setSelection(Arrays.asList(TitleName).indexOf(dataManager.getTitleNameThai()));
-                S_TitleName.setEnabled(false);
+                //S_TitleName.setEnabled(false);
             }
         }
         else

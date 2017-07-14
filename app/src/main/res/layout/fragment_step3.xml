@@ -82,7 +82,7 @@
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/Contactname"
+                            android:id="@+id/E_FirstNameContact"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
@@ -108,7 +108,7 @@
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/editText12"
+                            android:id="@+id/E_LastNameContact"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
@@ -157,7 +157,7 @@
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/editText8"
+                            android:id="@+id/E_TellContact"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -182,7 +182,7 @@
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/editText9"
+                            android:id="@+id/E_HomeTellContact"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"

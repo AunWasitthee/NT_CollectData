@@ -138,16 +138,16 @@ public class DataStepFragment2 extends ButterKnifeFragment implements BlockingSt
     public void checkboxToggled (boolean isChecked) {
         // true = checkbox is checked
         if (isChecked){
-            E_NowHouseNumber.setText("1");
-            E_NowBuilding.setText("1");
-            E_NowRoom.setText("1");
-            E_NowFloor.setText("1");
-            E_NowMoo.setText("1");
-            E_NowSoi.setText("1");
-            E_NowTambon.setText("1");
-            E_NowAmphur.setText("1");
-            E_NowProvince.setText("1");
-            E_NowPostCode.setText("1");
+            E_NowHouseNumber.setText(E_CardHouseNumber.getText().toString());
+            E_NowBuilding.setText(E_CardBuilding.getText().toString());
+            E_NowRoom.setText(E_CardRoom.getText().toString());
+            E_NowFloor.setText(E_CardFloor.getText().toString());
+            E_NowMoo.setText(E_CardMoo.getText().toString());
+            E_NowSoi.setText(E_CardSoi.getText().toString());
+            E_NowTambon.setText(E_CardTambon.getText().toString());
+            E_NowAmphur.setText(E_CardAmphur.getText().toString());
+            E_NowProvince.setText(E_CardProvince.getText().toString());
+            E_NowPostCode.setText(E_CardPostCode.getText().toString());
         }
         else{
             // false = checkbox is unchecked}
