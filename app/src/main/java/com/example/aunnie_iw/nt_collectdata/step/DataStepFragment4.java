@@ -8,8 +8,10 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.UiThread;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.util.Log;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.aunnie_iw.nt_collectdata.DataManager;
 import com.example.aunnie_iw.nt_collectdata.R;
@@ -45,10 +47,17 @@ public class DataStepFragment4 extends ButterKnifeFragment implements BlockingSt
 
     @Override
     public VerificationError verifyStep() {
-        return checkValue() ? null : new VerificationError("Click more times!");
+        return checkValue() ? null : new VerificationError("กรุณากรอกข้อมูลให้ครบถ้วน");
     }
     private boolean checkValue(){
-        return true;
+        if (TextUtils.isEmpty(E_Hight.getText().toString()))
+            return false;
+        else if (TextUtils.isEmpty(E_Weight.getText().toString()))
+            return false;
+        else if (TextUtils.isEmpty(E_BodyMass.getText().toString()))
+            return false;
+        else
+            return true;
     }
     @Override
     public void onSelected() {
@@ -57,11 +66,15 @@ public class DataStepFragment4 extends ButterKnifeFragment implements BlockingSt
 
     @Override
     public void onError(@NonNull VerificationError error) {
+        Toast.makeText(getActivity(), "onError! -> " + error.getErrorMessage(), Toast.LENGTH_SHORT).show();
     }
 
     @OnTextChanged(value = {R.id.E_Hight,R.id.E_Weight},callback = OnTextChanged.Callback.AFTER_TEXT_CHANGED)
-    public void CalculateBodyMass(Editable s){
-        if (!E_Hight.getText().toString().equals("")&&!E_Weight.getText().toString().equals("")) {
+    public void CalculateBodyMass(Editable s) {
+        if (E_Hight.getText().toString().equals("") && E_Weight.getText().toString().equals("")){
+            E_BodyMass.setText(null);
+        }
+        else{
             double Hight = Double.parseDouble(E_Hight.getText().toString());
             double Weight = Double.parseDouble(E_Weight.getText().toString());
 

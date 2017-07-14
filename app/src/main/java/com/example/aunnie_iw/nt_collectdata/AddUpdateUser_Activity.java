@@ -21,6 +21,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import butterknife.Bind;
 import nectec_stp.code.com.ntcardreader.*;
@@ -86,12 +87,16 @@ public class AddUpdateUser_Activity extends AppCompatActivity implements View.On
             @Override
             public void onClick(View view) {
                 dataObject.setIDcard(E_Search.getText().toString());
-                //dataObject.setTitleNameThai("นางสาว");
-                Log.d("onClick: ", E_Search.getText().toString());
-                Intent intent = new Intent(AddUpdateUser_Activity.this,StepAddData_Activity.class);
-                intent.putExtra("DataObject", dataObject);
-                intent.putExtra("AddrssDataObject",addressDataObject);
-                startActivity(intent);
+                if (dataObject.getIDcard().equals("")) {
+                    Toast.makeText(AddUpdateUser_Activity.this, "onError! -> กรุณากรอกเลขบัตรประชาชน", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Log.d("onClick: ", E_Search.getText().toString());
+                    Intent intent = new Intent(AddUpdateUser_Activity.this, StepAddData_Activity.class);
+                    intent.putExtra("DataObject", dataObject);
+                    intent.putExtra("AddrssDataObject", addressDataObject);
+                    startActivity(intent);
+                }
             }
         });
     }
