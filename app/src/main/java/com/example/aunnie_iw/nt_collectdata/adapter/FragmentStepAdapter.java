@@ -50,7 +50,7 @@ public class FragmentStepAdapter extends AbstractFragmentStepAdapter {
             case 4:
                 return StepFragment5.newInstance(R.layout.fragment_step5);
             case 5:
-                return StepFragmentSample.newInstance(R.layout.fragment_step6);
+                return StepFragmentSample.newInstance(R.layout.fragment_step7);
             default:
                 throw new IllegalArgumentException("Unsupported position: " + position);
         }

@@ -17,6 +17,7 @@ import com.example.aunnie_iw.nt_collectdata.step.DataStepFragment3;
 import com.example.aunnie_iw.nt_collectdata.step.DataStepFragment4;
 import com.example.aunnie_iw.nt_collectdata.step.DataStepFragment5;
 import com.example.aunnie_iw.nt_collectdata.step.DataStepFragment6;
+import com.example.aunnie_iw.nt_collectdata.step.DataStepFragment7;
 import com.stepstone.stepper.Step;
 import com.stepstone.stepper.adapter.AbstractFragmentStepAdapter;
 import com.stepstone.stepper.viewmodel.StepViewModel;
@@ -30,7 +31,7 @@ public class DataStepsFragmentStepAdapter extends AbstractFragmentStepAdapter {
     @NonNull
     @Override
     public StepViewModel getViewModel(@IntRange(from = 0) int position) {
-        CharSequence[] itemTopic = {"ข้อมูลทั่วไป","ที่อยู่","ผู้ติดต่อ","โรค","ความผิดปกติ","วัสดุ"};
+        CharSequence[] itemTopic = {"ข้อมูลทั่วไป","ที่อยู่","ผู้ติดต่อ","โรค","ความผิดปกติ","รูปถ่าย","วัสดุ"};
         return new StepViewModel.Builder(context)
                 .setTitle(itemTopic[position])
                 .create();
@@ -51,6 +52,8 @@ public class DataStepsFragmentStepAdapter extends AbstractFragmentStepAdapter {
                 return DataStepFragment5.newInstance();
             case 5:
                 return DataStepFragment6.newInstance();
+            case 6:
+                return DataStepFragment7.newInstance();
             default:
                 throw new IllegalArgumentException("Unsupported position: " + position);
         }
@@ -58,6 +61,6 @@ public class DataStepsFragmentStepAdapter extends AbstractFragmentStepAdapter {
 
     @Override
     public int getCount() {
-        return 6;
+        return 7;
     }
 }

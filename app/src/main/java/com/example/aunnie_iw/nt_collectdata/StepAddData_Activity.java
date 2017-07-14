@@ -36,7 +36,7 @@ public class StepAddData_Activity extends AppCompatActivity implements DataManag
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle("Stepper sample");
+        setTitle("เก็บข้อมูล");
 
         setContentView(R.layout.activity_styled_tabs);
         ButterKnife.bind(this);
@@ -46,6 +46,9 @@ public class StepAddData_Activity extends AppCompatActivity implements DataManag
         Intent intent = getIntent();
         dataObject = (DataObject) intent.getExtras().getSerializable("DataObject");
         addressDataObject = (AddressDataObject) intent.getExtras().getSerializable("AddrssDataObject");
+
+        mStepperLayout.setShowErrorStateEnabled(true);
+        mStepperLayout.setShowErrorStateOnBackEnabled(true);
     }
 
     @Override

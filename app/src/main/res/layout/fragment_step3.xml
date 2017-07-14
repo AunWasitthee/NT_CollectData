@@ -32,7 +32,7 @@
                     <TextView
                         android:id="@+id/tv_head_step3"
                         android:layout_width="match_parent"
-                        android:layout_height="57dp"
+                        android:layout_height="wrap_content"
 
                         android:text="บุคคลที่ติดต่อได้"
                         android:textSize="30sp" />
@@ -52,8 +52,8 @@
                         <TextView
                             android:id="@+id/textView4"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
                             android:layout_weight="1"
                             android:text="คำนำหน้าชื่อ"
                             android:textSize="18sp" />
@@ -61,7 +61,7 @@
                         <Spinner
                             android:id="@+id/S_TitleContact"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="40dp"
 
                             android:layout_weight="1" />
 
@@ -127,8 +127,8 @@
                         <TextView
                             android:id="@+id/textView11"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
                             android:layout_weight="1"
                             android:text="ความสัมพันธ์"
                             android:textSize="18sp" />
@@ -136,7 +136,7 @@
                         <Spinner
                             android:id="@+id/S_Relationship"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="40dp"
 
                             android:layout_weight="1" />
 

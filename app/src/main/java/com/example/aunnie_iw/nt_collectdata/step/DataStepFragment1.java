@@ -7,6 +7,7 @@ package com.example.aunnie_iw.nt_collectdata.step;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.UiThread;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,12 +64,26 @@ public class DataStepFragment1 extends ButterKnifeFragment implements BlockingSt
 
     @Override
     public VerificationError verifyStep() {
-        return checkValue() ? null : new VerificationError("Click more times!");
+        return checkValue() ? null : new VerificationError("กรุณากรอกข้อมูลให้ครบถ้วน");
     }
     private boolean checkValue(){
-
-        //f()
-        return true;
+//Check Location Id Card
+        if (TextUtils.isEmpty(E_FirstName.getText().toString()))
+            return false;
+        else if (TextUtils.isEmpty(E_Lastname.getText().toString()))
+            return false;
+        else if (TextUtils.isEmpty(E_Birthday.getText().toString()))
+            return false;
+        else if (TextUtils.isEmpty(E_Age.getText().toString()))
+            return false;
+        else if (TextUtils.isEmpty(E_Tell.getText().toString()))
+            return false;
+        else if (TextUtils.isEmpty(E_HomeTell.getText().toString()))
+            return false;
+        else if (TextUtils.isEmpty(E_Email.getText().toString()))
+            return false;
+        else
+            return true;
     }
     @Override
     public void onSelected() {
@@ -89,6 +104,7 @@ public class DataStepFragment1 extends ButterKnifeFragment implements BlockingSt
 
     @Override
     public void onError(@NonNull VerificationError error) {
+        Toast.makeText(getActivity(), "onError! -> " + error.getErrorMessage(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -125,9 +141,10 @@ public class DataStepFragment1 extends ButterKnifeFragment implements BlockingSt
 
     public void setPositionSpinner(){
         if (dataManager.getTitleNameThai()!=null){
-
-            S_TitleName.setSelection(Arrays.asList(TitleName).indexOf(dataManager.getTitleNameThai()));
-            S_TitleName.setEnabled(false);
+            if (!dataManager.getTitleNameThai().equals("")) {
+                S_TitleName.setSelection(Arrays.asList(TitleName).indexOf(dataManager.getTitleNameThai()));
+                S_TitleName.setEnabled(false);
+            }
         }
         else
             S_TitleName.setSelection(TitleNamePosition);

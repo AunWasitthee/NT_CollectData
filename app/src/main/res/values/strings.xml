@@ -9,7 +9,7 @@
         <item>นาย</item>
         <item>นาง</item>
         <item>นางสาว</item>
-        <item>--คำนำหน้า--</item>
+
     </string-array>
 
     <!-- ชุดข้อมูลความสัมพันธ์ -->
@@ -24,8 +24,7 @@
         <item>ลุง</item>
         <item>ป้า</item>
         <item>ลูปพี่ลูกน้อง</item>
-        <item>ใครก็ไม่รู้</item>
-        <item>--ความสัมพันธ์--</item>
+
     </string-array>
 
 

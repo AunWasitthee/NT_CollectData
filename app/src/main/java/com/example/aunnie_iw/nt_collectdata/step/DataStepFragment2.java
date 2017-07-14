@@ -7,8 +7,10 @@ package com.example.aunnie_iw.nt_collectdata.step;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.UiThread;
+import android.text.TextUtils;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.aunnie_iw.nt_collectdata.DataManager;
 import com.example.aunnie_iw.nt_collectdata.R;
@@ -17,6 +19,8 @@ import com.stepstone.stepper.StepperLayout;
 import com.stepstone.stepper.VerificationError;
 
 import butterknife.Bind;
+import butterknife.OnCheckedChanged;
+import butterknife.OnClick;
 
 public class DataStepFragment2 extends ButterKnifeFragment implements BlockingStep {
     String a;
@@ -62,10 +66,55 @@ public class DataStepFragment2 extends ButterKnifeFragment implements BlockingSt
 
     @Override
     public VerificationError verifyStep() {
-        return checkValue() ? null : new VerificationError("Click more times!");
+        return checkValue() ? null : new VerificationError("กรุณากรอกข้อมูลให้ครบถ้วน");
     }
+
     private boolean checkValue(){
-        return true;
+        //Check Location Id Card
+        if (TextUtils.isEmpty(E_CardHouseNumber.getText().toString()))
+            return false;
+        else if (TextUtils.isEmpty(E_CardBuilding.getText().toString()))
+            return false;
+        else if (TextUtils.isEmpty(E_CardRoom.getText().toString()))
+            return false;
+        else if (TextUtils.isEmpty(E_CardFloor.getText().toString()))
+            return false;
+        else if (TextUtils.isEmpty(E_CardMoo.getText().toString()))
+            return false;
+        else if (TextUtils.isEmpty(E_CardSoi.getText().toString()))
+            return false;
+        else if (TextUtils.isEmpty(E_CardTambon.getText().toString()))
+            return false;
+        else if (TextUtils.isEmpty(E_CardAmphur.getText().toString()))
+            return false;
+        else if (TextUtils.isEmpty(E_CardProvince.getText().toString()))
+            return false;
+        else if (TextUtils.isEmpty(E_CardPostCode.getText().toString()))
+            return false;
+        //Check Location Now
+        else if (TextUtils.isEmpty(E_NowHouseNumber.getText().toString()))
+            return false;
+        else if (TextUtils.isEmpty(E_NowBuilding.getText().toString()))
+            return false;
+        else if (TextUtils.isEmpty(E_NowRoom.getText().toString()))
+            return false;
+        else if (TextUtils.isEmpty(E_NowFloor.getText().toString()))
+            return false;
+        else if (TextUtils.isEmpty(E_NowMoo.getText().toString()))
+            return false;
+        else if (TextUtils.isEmpty(E_NowSoi.getText().toString()))
+            return false;
+        else if (TextUtils.isEmpty(E_NowTambon.getText().toString()))
+            return false;
+        else if (TextUtils.isEmpty(E_NowAmphur.getText().toString()))
+            return false;
+        else if (TextUtils.isEmpty(E_NowProvince.getText().toString()))
+            return false;
+        else if (TextUtils.isEmpty(E_NowPostCode.getText().toString()))
+            return false;
+
+        else
+            return true;
     }
     @Override
     public void onSelected() {
@@ -82,10 +131,44 @@ public class DataStepFragment2 extends ButterKnifeFragment implements BlockingSt
                 E_CardProvince.setText(dataManager.getprovince());
 
         }
+
+    }
+
+    @OnCheckedChanged(R.id.CB_SameLocation)
+    public void checkboxToggled (boolean isChecked) {
+        // true = checkbox is checked
+        if (isChecked){
+            E_NowHouseNumber.setText("1");
+            E_NowBuilding.setText("1");
+            E_NowRoom.setText("1");
+            E_NowFloor.setText("1");
+            E_NowMoo.setText("1");
+            E_NowSoi.setText("1");
+            E_NowTambon.setText("1");
+            E_NowAmphur.setText("1");
+            E_NowProvince.setText("1");
+            E_NowPostCode.setText("1");
+        }
+        else{
+            // false = checkbox is unchecked}
+            E_NowHouseNumber.setText(null);
+            E_NowBuilding.setText(null);
+            E_NowRoom.setText(null);
+            E_NowFloor.setText(null);
+            E_NowMoo.setText(null);
+            E_NowSoi.setText(null);
+            E_NowTambon.setText(null);
+            E_NowAmphur.setText(null);
+            E_NowProvince.setText(null);
+            E_NowPostCode.setText(null);
+        }
+
+
     }
 
     @Override
     public void onError(@NonNull VerificationError error) {
+        Toast.makeText(getActivity(), "onError! -> " + error.getErrorMessage(), Toast.LENGTH_SHORT).show();
     }
 
     @Override

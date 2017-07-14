@@ -16,7 +16,7 @@
             android:id="@+id/tv_Head"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add/Update User"
+            android:text="เพิ่ม/แก้ไขข้อมูล"
 
             android:textSize="30sp" />
 
@@ -80,7 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Read Data" />
+                android:text="อ่านข้อมูลจากบัตรปรถชาชน" />
 
         </LinearLayout>
 
