@@ -25,9 +25,16 @@ import com.stepstone.stepper.VerificationError;
 import com.example.aunnie_iw.nt_collectdata.DataManager;
 import com.example.aunnie_iw.nt_collectdata.R;
 
+import org.joda.time.LocalDate;
+import org.joda.time.Years;
+
 import java.text.DecimalFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 import butterknife.Bind;
 import butterknife.OnTextChanged;
@@ -115,9 +122,37 @@ public class DataStepFragment1 extends ButterKnifeFragment implements BlockingSt
         Toast.makeText(getActivity(), "onError! -> " + error.getErrorMessage(), Toast.LENGTH_SHORT).show();
     }
 
-    @OnTextChanged(value = R.id.E_Birthday,callback = OnTextChanged.Callback.TEXT_CHANGED)
-    public void CalculateAge(CharSequence s) {
+    @OnTextChanged(value = R.id.E_Birthday,callback = OnTextChanged.Callback.AFTER_TEXT_CHANGED)
+    public void CalculateAge(Editable s) {
+        String value = E_Birthday.getText().toString();
+        if(isValidFormat(value)) {
 
+            int day = Integer.parseInt(value.substring(0, 2));
+            int mon = Integer.parseInt(value.substring(3
+
+                    , 5));
+            int year = Integer.parseInt(value.substring(6, 10)) - 543;
+
+            LocalDate birthdate = new LocalDate(year, mon, day);
+            LocalDate now = new LocalDate(); // test, in real world without args
+            Years age = Years.yearsBetween(birthdate, now);
+            System.out.println(age.getYears()); // 18
+            E_Age.setText(String.valueOf(age.getYears()));
+        }
+    }
+    public static boolean isValidFormat(String value) {
+        Date date = null;
+
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            date = sdf.parse(value);
+            if (!value.equals(sdf.format(date))) {
+                date = null;
+            }
+        } catch (ParseException ex) {
+            ex.printStackTrace();
+        }
+        return date != null;
     }
 
 
