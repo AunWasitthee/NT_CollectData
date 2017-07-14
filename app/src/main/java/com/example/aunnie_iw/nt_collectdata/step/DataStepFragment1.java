@@ -7,6 +7,7 @@ package com.example.aunnie_iw.nt_collectdata.step;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.UiThread;
+import android.text.Editable;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -24,9 +25,12 @@ import com.stepstone.stepper.VerificationError;
 import com.example.aunnie_iw.nt_collectdata.DataManager;
 import com.example.aunnie_iw.nt_collectdata.R;
 
+import java.text.DecimalFormat;
 import java.util.Arrays;
+import java.util.Calendar;
 
 import butterknife.Bind;
+import butterknife.OnTextChanged;
 
 public class DataStepFragment1 extends ButterKnifeFragment implements BlockingStep {
 
@@ -37,6 +41,10 @@ public class DataStepFragment1 extends ButterKnifeFragment implements BlockingSt
     private DataManager dataManager;
     private String[] TitleName;
     private int TitleNamePosition = 0;
+
+    private String current = "";
+    private String ddmmyyyy = "DDMMYYYY";
+    private Calendar cal = Calendar.getInstance();
 
     @Bind(R.id.tv_IdCard) TextView tv_IdCard;
 
@@ -106,6 +114,13 @@ public class DataStepFragment1 extends ButterKnifeFragment implements BlockingSt
     public void onError(@NonNull VerificationError error) {
         Toast.makeText(getActivity(), "onError! -> " + error.getErrorMessage(), Toast.LENGTH_SHORT).show();
     }
+
+    @OnTextChanged(value = R.id.E_Birthday,callback = OnTextChanged.Callback.TEXT_CHANGED)
+    public void CalculateAge(CharSequence s) {
+
+    }
+
+
 
     @Override
     @UiThread

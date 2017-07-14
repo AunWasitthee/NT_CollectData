@@ -71,7 +71,7 @@ public class DataStepFragment4 extends ButterKnifeFragment implements BlockingSt
 
     @OnTextChanged(value = {R.id.E_Hight,R.id.E_Weight},callback = OnTextChanged.Callback.AFTER_TEXT_CHANGED)
     public void CalculateBodyMass(Editable s) {
-        if (E_Hight.getText().toString().equals("") && E_Weight.getText().toString().equals("")){
+        if (E_Hight.getText().toString().equals("") || E_Weight.getText().toString().equals("")){
             E_BodyMass.setText(null);
         }
         else{
