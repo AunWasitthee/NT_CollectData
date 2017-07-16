@@ -67,4 +67,15 @@
     <string name="Plantar_fasciitis">Plantar_fasciitis</string>
     <string name="Leg_length_discrepancy">Leg length discrepancy</string>
     <string name="Other_Disorder">Other</string>
+
+    <!-- Photos -->
+    <string name="TakePic">ถ่ายรูป</string>
+    <string name="Pic1">รุปที่ 1</string>
+    <string name="Pic2">รุปที่ 2</string>
+    <string name="Pic3">รุปที่ 3</string>
+    <string name="Pic4">รุปที่ 4</string>
+    <string name="Pic5">รุปที่ 5</string>
+    <string name="Pic6">รุปที่ 6</string>
+    <string name="Pic7">รุปที่ 7</string>
+
 </resources>

@@ -42,7 +42,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:padding=" 16dp">
+                    android:padding="16dp">
 
 
                     <LinearLayout
@@ -57,31 +57,34 @@
                             android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/imageView3"
+                                android:id="@+id/Pic1"
                                 android:layout_width="match_parent"
                                 android:layout_height="128dp"
                                 android:layout_weight="1"
                                 app:srcCompat="@drawable/ic_shoes_default" />
 
                             <LinearLayout
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:orientation="horizontal">
+                                android:orientation="horizontal"
+                                android:layout_gravity="center">
 
                                 <TextView
-                                    android:id="@+id/textView13"
-                                    android:layout_width="match_parent"
+                                    android:id="@+id/Tv_Pic1"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="TextView" />
+                                    android:text="@string/Pic1"
+                                    android:textAlignment="center"
+                                    android:textSize="18sp" />
 
                                 <Button
-                                    android:id="@+id/button2"
-                                    android:layout_width="match_parent"
+                                    android:id="@+id/TakePic1"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="Button" />
+                                    android:text="@string/TakePic" />
 
                             </LinearLayout>
 
@@ -101,7 +104,7 @@
                             android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/imageView3"
+                                android:id="@+id/Pic2"
                                 android:layout_width="match_parent"
                                 android:layout_height="128dp"
                                 android:layout_weight="1"
@@ -114,18 +117,21 @@
                                 android:orientation="horizontal">
 
                                 <TextView
-                                    android:id="@+id/textView13"
+                                    android:id="@+id/Tv_Pic2"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:layout_gravity=""
                                     android:layout_weight="1"
-                                    android:text="TextView" />
+                                    android:text="@string/Pic2"
+                                    android:textAlignment="center"
+                                    android:textSize="18sp" />
 
                                 <Button
-                                    android:id="@+id/button2"
+                                    android:id="@+id/TakePic2"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="Button" />
+                                    android:text="@string/TakePic" />
 
                             </LinearLayout>
 
@@ -138,7 +144,7 @@
                             android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/imageView3"
+                                android:id="@+id/Pic3"
                                 android:layout_width="match_parent"
                                 android:layout_height="128dp"
                                 android:layout_weight="1"
@@ -151,18 +157,20 @@
                                 android:orientation="horizontal">
 
                                 <TextView
-                                    android:id="@+id/textView13"
+                                    android:id="@+id/Tv_Pic3"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="TextView" />
+                                    android:text="@string/Pic3"
+                                    android:textAlignment="center"
+                                    android:textSize="18sp" />
 
                                 <Button
-                                    android:id="@+id/button2"
+                                    android:id="@+id/TakePic3"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="Button" />
+                                    android:text="@string/TakePic" />
 
                             </LinearLayout>
 
@@ -182,7 +190,7 @@
                             android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/imageView3"
+                                android:id="@+id/Pic4"
                                 android:layout_width="match_parent"
                                 android:layout_height="128dp"
                                 android:layout_weight="1"
@@ -195,18 +203,20 @@
                                 android:orientation="horizontal">
 
                                 <TextView
-                                    android:id="@+id/textView13"
+                                    android:id="@+id/Tv_pic4"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="TextView" />
+                                    android:text="@string/Pic4"
+                                    android:textAlignment="center"
+                                    android:textSize="18sp" />
 
                                 <Button
-                                    android:id="@+id/button2"
+                                    android:id="@+id/TakePic4"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="Button" />
+                                    android:text="@string/TakePic" />
 
                             </LinearLayout>
 
@@ -219,7 +229,7 @@
                             android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/imageView3"
+                                android:id="@+id/Pic5"
                                 android:layout_width="match_parent"
                                 android:layout_height="128dp"
                                 android:layout_weight="1"
@@ -232,18 +242,20 @@
                                 android:orientation="horizontal">
 
                                 <TextView
-                                    android:id="@+id/textView13"
+                                    android:id="@+id/Tv_Pic5"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="TextView" />
+                                    android:text="@string/Pic5"
+                                    android:textAlignment="center"
+                                    android:textSize="18sp" />
 
                                 <Button
-                                    android:id="@+id/button2"
+                                    android:id="@+id/TakePic5"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="Button" />
+                                    android:text="@string/TakePic" />
 
                             </LinearLayout>
 
@@ -263,7 +275,7 @@
                             android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/imageView3"
+                                android:id="@+id/Pic6"
                                 android:layout_width="match_parent"
                                 android:layout_height="128dp"
                                 android:layout_weight="1"
@@ -276,18 +288,20 @@
                                 android:orientation="horizontal">
 
                                 <TextView
-                                    android:id="@+id/textView13"
+                                    android:id="@+id/Tv_Pic6"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="TextView" />
+                                    android:text="@string/Pic6"
+                                    android:textAlignment="center"
+                                    android:textSize="18sp" />
 
                                 <Button
-                                    android:id="@+id/button2"
+                                    android:id="@+id/TakePic6"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="Button" />
+                                    android:text="@string/TakePic" />
 
                             </LinearLayout>
 
@@ -300,7 +314,7 @@
                             android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/imageView3"
+                                android:id="@+id/Pic7"
                                 android:layout_width="match_parent"
                                 android:layout_height="128dp"
                                 android:layout_weight="1"
@@ -313,18 +327,20 @@
                                 android:orientation="horizontal">
 
                                 <TextView
-                                    android:id="@+id/textView13"
+                                    android:id="@+id/Tv_Pic7"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="TextView" />
+                                    android:text="@string/Pic7"
+                                    android:textAlignment="center"
+                                    android:textSize="18sp" />
 
                                 <Button
-                                    android:id="@+id/button2"
+                                    android:id="@+id/TakePic7"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="Button" />
+                                    android:text="@string/TakePic" />
 
                             </LinearLayout>
 
