@@ -16,6 +16,7 @@ import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.provider.Settings;
+import android.support.annotation.ArrayRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.UiThread;
 import android.support.v4.app.ActivityCompat;
@@ -38,6 +39,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 import butterknife.Bind;
@@ -54,7 +56,7 @@ public class DataStepFragment6 extends ButterKnifeFragment implements BlockingSt
 
     private DataManager dataManager;
 
-    private Bitmap ImgLocationCard;
+    //private Bitmap ImgLocationCard;
 
     public static final int MY_PERMISSIONS_REQUEST_STORED = 90;
     public static final int MY_PERMISSIONS_REQUEST_CAMERA = 98;
@@ -64,11 +66,13 @@ public class DataStepFragment6 extends ButterKnifeFragment implements BlockingSt
 
     private Uri uri;
     private File f;
+    private  int positionImage;
 
+    private Bitmap[] ImgLocationCard = new Bitmap[7];
     private static final int REQUEST_PERMISSION_SETTING = 101;
     private boolean sentToSettings = false;
     private SharedPreferences permissionStatus;
-    private String PathImgLocationCard;
+    private String[] PathImgLocationCard = new String[7];
 
     @Bind(R.id.Pic1) ImageView Pic1;
     @Bind(R.id.Pic2) ImageView Pic2;
@@ -84,6 +88,33 @@ public class DataStepFragment6 extends ButterKnifeFragment implements BlockingSt
     @Bind(R.id.TakePic5) Button TakePic5;
     @Bind(R.id.TakePic6) Button TakePic6;
     @Bind(R.id.TakePic7) Button TakePic7;
+
+    public void setPathImage(int position, String s){
+        this.PathImgLocationCard[position] = s;
+    }
+
+    public String getPathImage(int position){
+        return this.PathImgLocationCard[position];
+    }
+    public void setBitmapPosition(int position, Bitmap b){
+        ImgLocationCard[position] = b;
+    }
+
+    public Bitmap getBitmapPosition(int position){
+        return ImgLocationCard[position];
+    }
+
+
+    public void setImagePosition(int position){
+        this.positionImage = position;
+    }
+
+    public  int getImagePosition(){
+        return this.positionImage;
+    }
+    public void UpdateImageUi(){
+
+    }
 
     @Override
     public void onAttach(Context context) {
@@ -108,7 +139,6 @@ public class DataStepFragment6 extends ButterKnifeFragment implements BlockingSt
     @Override
     public void onSelected() {
         permissionStatus = this.getActivity().getSharedPreferences("permissionStatus",MODE_PRIVATE);
-
     }
 
     @Override
@@ -141,38 +171,45 @@ public class DataStepFragment6 extends ButterKnifeFragment implements BlockingSt
     public void onClick(Button button) {
         switch (button.getId()){
             case R.id.TakePic1:
+                setImagePosition(1);
                 selectImage("Pic1");
-                Pic1.setImageBitmap(ImgLocationCard);
+                Pic1.setImageBitmap(getBitmapPosition(1));
                 Toast.makeText(getActivity(), "Pic1 ", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.TakePic2:
+                setImagePosition(2);
                 selectImage("Pic2");
-                Pic2.setImageBitmap(ImgLocationCard);
+                Pic2.setImageBitmap(getBitmapPosition(2));
                 Toast.makeText(getActivity(), "Pic2 ", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.TakePic3:
+                setImagePosition(2);
                 selectImage("Pic3");
-                Pic3.setImageBitmap(ImgLocationCard);
+                Pic3.setImageBitmap(getBitmapPosition(3));
                 Toast.makeText(getActivity(), "Pic3 ", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.TakePic4:
+                setImagePosition(4);
                 selectImage("Pic4");
-                Pic4.setImageBitmap(ImgLocationCard);
+                Pic4.setImageBitmap(getBitmapPosition(4));
                 Toast.makeText(getActivity(), "Pic4 ", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.TakePic5:
+                setImagePosition(5);
                 selectImage("Pic5");
-                Pic5.setImageBitmap(ImgLocationCard);
+                Pic5.setImageBitmap(getBitmapPosition(5));
                 Toast.makeText(getActivity(), "Pic5 ", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.TakePic6:
+                setImagePosition(6);
                 selectImage("Pic6");
-                Pic6.setImageBitmap(ImgLocationCard);
+                Pic6.setImageBitmap(getBitmapPosition(6));
                 Toast.makeText(getActivity(), "Pic6 ", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.TakePic7:
+                setImagePosition(7);
                 selectImage("Pic7");
-                Pic7.setImageBitmap(ImgLocationCard);
+                Pic7.setImageBitmap(getBitmapPosition(7));
                 Toast.makeText(getActivity(), "Pic7 ", Toast.LENGTH_SHORT).show();
                 break;
         }
@@ -247,16 +284,17 @@ public class DataStepFragment6 extends ButterKnifeFragment implements BlockingSt
         Log.d("onActivityResult", "onActivityResult: ");
         if (requestCode == REQUEST_GALLERY && resultCode == RESULT_OK) {
             uri = data.getData();
-
-            PathImgLocationCard = Helper.getPath(getActivity(), Uri.parse(data.getData().toString()));
+            String path =Helper.getPath(getActivity(), Uri.parse(data.getData().toString()));
+            setPathImage(getImagePosition(), path);
+            //PathImgLocationCard[getImagePosition()] = Helper.getPath(getActivity(), Uri.parse(data.getData().toString()));
             //uploadFromFile(PathImgLocationCard);
             //File imageFile = new File(getRealPathFromURI(uri));
             Log.d(uri.toString(), "onActivityResult: ");
             Log.d(uri.getPath(), "onActivityResult: ");
-            Log.d(PathImgLocationCard, "onActivityResult: ");
+            Log.d(getPathImage(getImagePosition()), "onActivityResult: ");
             try {
-                ImgLocationCard = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), uri);
-                ImgLocationCard= RotateImg.Rotate(PathImgLocationCard,ImgLocationCard);
+                ImgLocationCard[getImagePosition()] = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), uri);
+                ImgLocationCard[getImagePosition()]= RotateImg.Rotate(getPathImage(getImagePosition()),ImgLocationCard[getImagePosition()]);
                 Log.d("bitmap", "onActivityResult: ");
                 //uploadFromDataInMemory(bitmap);
 //                Pic1.setImageBitmap(ImgLocationCard);
@@ -276,11 +314,14 @@ public class DataStepFragment6 extends ButterKnifeFragment implements BlockingSt
 
             try {
 
-                ImgLocationCard = MediaStore.Images.Media.getBitmap(cr, uri);
-                ImgLocationCard = RotateImg.Rotate(uri.getPath(),ImgLocationCard);
-                //Log.d(f.getPath(), "onActivityResult: Path");
-                PathImgLocationCard = uri.getPath();
+                ImgLocationCard[getImagePosition()] = MediaStore.Images.Media.getBitmap(cr, uri);
+                ImgLocationCard[getImagePosition()] = RotateImg.Rotate(uri.getPath(),ImgLocationCard[getImagePosition()]);
+
+                setPathImage(getImagePosition(),uri.getPath().toString());
+                Log.d("onActivityResult: Path", getPathImage(getImagePosition()));
+                //PathImgLocationCard[getImagePosition()] = uri.getPath();
 //                Pic1.setImageBitmap(ImgLocationCard);
+
                 Toast.makeText(getActivity().getApplicationContext()
                         , uri.getPath(), Toast.LENGTH_SHORT).show();
             } catch (Exception e) {
