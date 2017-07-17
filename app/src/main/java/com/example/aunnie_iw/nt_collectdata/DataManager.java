@@ -1,13 +1,18 @@
 package com.example.aunnie_iw.nt_collectdata;
 
+import android.graphics.Bitmap;
+
+import java.io.Serializable;
+
 /**
  * Created by Aunnie-IW on 13/7/2560.
  */
 
-public interface DataManager {
+public interface DataManager  {
     void saveData(String data);
 
-    String getimg();
+    String getImg();
+
     String getIDcard();
     String getTitleNameThai();
     void saveTitleNameThai(String TitleNameThai);

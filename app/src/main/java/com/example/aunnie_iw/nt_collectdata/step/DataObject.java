@@ -1,5 +1,7 @@
 package com.example.aunnie_iw.nt_collectdata.step;
 
+import android.graphics.Bitmap;
+
 import java.io.Serializable;
 
 /**

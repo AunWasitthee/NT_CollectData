@@ -30,21 +30,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="Add / Update User" />
+                android:text="@string/AddUser" />
 
             <Button
                 android:id="@+id/BHistory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="History" />
+                android:text="@string/History" />
 
             <Button
                 android:id="@+id/BLogout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="Log out" />
+                android:text="@string/LogOut" />
         </LinearLayout>
 
     </LinearLayout>

@@ -224,12 +224,15 @@ public class AddUpdateUser_Activity extends AppCompatActivity implements View.On
                                 dataObject.setLastNameThai(card.getLastNameThai());
                                 dataObject.setIDcard(card.getCitizenID());
                                 dataObject.setBirthday(card.getBirthday());
+
+
+                                dataObject.setImg(Helper.BitMapToString(card.getPicture()));
                                 addressDataObject.setHouseNumber(card.getAddress().getHouseNumber());
                                 addressDataObject.setMoo(card.getAddress().getMoo());
                                 addressDataObject.setTambon(card.getAddress().getTambon());
                                 addressDataObject.setAmphur(card.getAddress().getAmphur());
                                 addressDataObject.setProvince(card.getAddress().getProvince());
-                                //E_Search.setText(dataObject.getIDcard());
+                                E_Search.setText(dataObject.getIDcard());
                                 Log.d("handleMessage: ", "handleMessage: ");
                                 Log.d("handleMessage: ", "handleMessage: ");
 

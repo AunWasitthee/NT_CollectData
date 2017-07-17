@@ -27,6 +27,14 @@
 
     </string-array>
 
+    <!-- LogIn -->
+    <string name="SignIn">เข้าสู่ระบบ</string>
+    <string name="Register">ลงทะเบียน</string>
+
+    <!-- Menu -->
+    <string name="AddUser">เพิ่ม/แก้ไขข้อมูล</string>
+    <string name="History">ประวัติการเก็บข้อมููล</string>
+    <string name="LogOut">ออกจากระบบ</string>
 
     <!-- Location -->
     <string name="HouseNumber">บ้านเลขที่</string>

@@ -6,17 +6,16 @@ package com.example.aunnie_iw.nt_collectdata;
 
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
 
 import com.example.aunnie_iw.nt_collectdata.step.AddressDataObject;
 import com.example.aunnie_iw.nt_collectdata.step.DataObject;
 import com.stepstone.stepper.StepperLayout;
 import com .example.aunnie_iw.nt_collectdata.adapter.DataStepsFragmentStepAdapter;
-import com.stepstone.stepper.VerificationError;
 
-        import butterknife.Bind;
+import butterknife.Bind;
         import butterknife.ButterKnife;
 
 public class StepAddData_Activity extends AppCompatActivity implements DataManager {
@@ -81,7 +80,7 @@ public class StepAddData_Activity extends AppCompatActivity implements DataManag
     }
 
     @Override
-    public String getimg() {
+    public String getImg() {
         return dataObject.getImg();
     }
 
