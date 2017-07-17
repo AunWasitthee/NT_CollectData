@@ -44,6 +44,7 @@ import butterknife.Bind;
 import butterknife.OnClick;
 
 import static android.app.Activity.RESULT_OK;
+import static android.content.Context.MODE_PRIVATE;
 
 public class DataStepFragment6 extends ButterKnifeFragment implements BlockingStep {
     String a;
@@ -93,6 +94,7 @@ public class DataStepFragment6 extends ButterKnifeFragment implements BlockingSt
             throw new IllegalStateException("Activity must implement DataManager interface!");
         }
 
+
     }
 
     @Override
@@ -102,8 +104,10 @@ public class DataStepFragment6 extends ButterKnifeFragment implements BlockingSt
     private boolean checkValue(){
         return true;
     }
+
     @Override
     public void onSelected() {
+        permissionStatus = this.getActivity().getSharedPreferences("permissionStatus",MODE_PRIVATE);
 
     }
 
@@ -215,6 +219,7 @@ public class DataStepFragment6 extends ButterKnifeFragment implements BlockingSt
                         startActivityForResult(intent, 1);
                     }
                 }
+
                 else if (options[item].equals("Cancel")) {
                     dialog.dismiss();
                 }
@@ -286,27 +291,9 @@ public class DataStepFragment6 extends ButterKnifeFragment implements BlockingSt
                 // sees the explanation, try again to request the permission.
 
                 //Prompt the user once explanation has been shown
-                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setTitle("Need STORAGE Permission");
-                builder.setMessage("This app needs WRITE_EXTERNAL_STORAGE permission.");
-                builder.setPositiveButton("Grant", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                        ActivityCompat.requestPermissions(getActivity(),
-                                new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                                MY_PERMISSIONS_REQUEST_STORED);
-
-                    }
-                });
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-                builder.show();
-
+                ActivityCompat.requestPermissions(getActivity(),
+                    new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                    MY_PERMISSIONS_REQUEST_STORED);
 
             }else if (permissionStatus.getBoolean(Manifest.permission.WRITE_EXTERNAL_STORAGE,false)) {
                 //Previously Permission Request was cancelled with 'Dont Ask Again',
@@ -364,26 +351,10 @@ public class DataStepFragment6 extends ButterKnifeFragment implements BlockingSt
 
                 //Prompt the user once explanation has been shown
                 //Show Information about why you need the permission
-                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setTitle("Need Storage Permission");
-                builder.setMessage("This app needs storage permission.");
-                builder.setPositiveButton("Grant", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                        ActivityCompat.requestPermissions(getActivity(),
-                                new String[]{android.Manifest.permission.CAMERA},
-                                MY_PERMISSIONS_REQUEST_CAMERA);
+                    ActivityCompat.requestPermissions(getActivity(),
+                        new String[]{android.Manifest.permission.CAMERA},
+                        MY_PERMISSIONS_REQUEST_CAMERA);
 
-                    }
-                });
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-                builder.show();
 
 
             }else if (permissionStatus.getBoolean(Manifest.permission.CAMERA,false)) {
