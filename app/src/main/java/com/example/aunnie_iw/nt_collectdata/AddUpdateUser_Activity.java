@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -25,10 +26,17 @@ import android.widget.Toast;
 
 import butterknife.Bind;
 import nectec_stp.code.com.ntcardreader.*;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 import com.example.aunnie_iw.nt_collectdata.step.AddressDataObject;
 import com.example.aunnie_iw.nt_collectdata.step.DataObject;
 import com.feitian.readerdk.Tool.DK;
+
+import org.json.JSONArray;
+
+import java.io.IOException;
 
 /**
  * Created by Aunnie-IW on 11/7/2560.
@@ -91,6 +99,7 @@ public class AddUpdateUser_Activity extends AppCompatActivity implements View.On
                     Toast.makeText(AddUpdateUser_Activity.this, "onError! -> กรุณากรอกเลขบัตรประชาชน", Toast.LENGTH_SHORT).show();
                 }
                 else {
+
                     Log.d("onClick: ", E_Search.getText().toString());
                     Intent intent = new Intent(AddUpdateUser_Activity.this, StepAddData_Activity.class);
                     intent.putExtra("DataObject", dataObject);
@@ -270,5 +279,37 @@ public class AddUpdateUser_Activity extends AppCompatActivity implements View.On
 //        DateToday.setText("");
     }
 
+    public class FeedAsyncTask extends AsyncTask<String, Void, String>{
+        @Override
+        protected void onPreExecute(){
+            super.onPreExecute();
+            // called before doInBasckground
+            Log.i("FeedAsyncTask","onPreExeccute");
 
+        }
+        @Override
+        protected String doInBackground(String... strings) {
+            // called in custom/background thread
+            Log.i("FeedAsyncTask","doInBackground: " + strings[0]);
+            final String _url = strings[0];
+            try{
+                OkHttpClient client = new OkHttpClient();
+                Request request = new Request.Builder().url(_url).build();
+
+                Response response = client.newCall(request).execute();
+                String s = response.body().string();
+                Log.i("FeedAsyncTask",s);
+                return "" + s;
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+        @Override
+        protected void onPostExecute(String s){
+            super.onPostExecute(s);
+            // called after doInBackground
+            Log.i("FeedAsyncTask","onPostExecute");
+        }
+    }
 }

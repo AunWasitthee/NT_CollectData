@@ -302,7 +302,7 @@ public class DataStepFragment6 extends ButterKnifeFragment implements BlockingSt
                 Log.d("FileNotFoundException", "onActivityResult: ");
                 e.printStackTrace();
             } catch (IOException e) {
-                Log.d("IOException", "onActivityResult: ");
+                Log.d("IOException", "onA ctivityResult: ");
                 e.printStackTrace();
             }
         }
