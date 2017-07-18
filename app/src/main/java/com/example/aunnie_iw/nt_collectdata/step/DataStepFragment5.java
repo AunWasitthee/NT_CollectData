@@ -7,6 +7,8 @@ package com.example.aunnie_iw.nt_collectdata.step;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.UiThread;
+import android.view.ViewGroup;
+import android.widget.CheckBox;
 
 import com.example.aunnie_iw.nt_collectdata.DataManager;
 import com.example.aunnie_iw.nt_collectdata.R;
@@ -14,14 +16,18 @@ import com.stepstone.stepper.BlockingStep;
 import com.stepstone.stepper.StepperLayout;
 import com.stepstone.stepper.VerificationError;
 
+import butterknife.Bind;
+
 public class DataStepFragment5 extends ButterKnifeFragment implements BlockingStep {
     String a;
+    String[] array = new String[]{"A","B","C"};
+
     public static DataStepFragment5 newInstance() {
         return new DataStepFragment5();
     }
 
     private DataManager dataManager;
-
+    @Bind(R.id.checkboxContainer) ViewGroup checkboxContainer;
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -41,7 +47,11 @@ public class DataStepFragment5 extends ButterKnifeFragment implements BlockingSt
     }
     @Override
     public void onSelected() {
-
+        for (int i = 0 ; i <array.length ; i++){
+            CheckBox checkBox = new CheckBox(getActivity());
+            checkBox.setText(array[i]);
+            checkboxContainer.addView(checkBox);
+        }
     }
 
     @Override

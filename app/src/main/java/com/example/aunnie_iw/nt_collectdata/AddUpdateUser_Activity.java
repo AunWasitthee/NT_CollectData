@@ -100,11 +100,11 @@ public class AddUpdateUser_Activity extends AppCompatActivity implements View.On
                 if (dataObject.getIDcard().equals("")) {
                     Toast.makeText(AddUpdateUser_Activity.this, "onError! -> กรุณากรอกเลขบัตรประชาชน", Toast.LENGTH_SHORT).show();
                 }
-                else if(haveNetworkConnection()){
-                    Log.d("haveNetworkConnection()", "Connect");
-                    new FeedAsyncTask().execute("http://203.150.245.33:8001/api/patient");
-
-                }
+//                else if(haveNetworkConnection()){
+//                    Log.d("haveNetworkConnection()", "Connect");
+//                    new FeedAsyncTask().execute("http://203.150.245.33:8001/api/patient");
+//
+//                }
 //                else if(haveNetworkConnection()){
 //                    Log.d("haveNetworkConnection()", "!!!!Connect");
 //                }

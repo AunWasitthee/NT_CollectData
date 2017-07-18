@@ -68,11 +68,11 @@ public class DataStepFragment6 extends ButterKnifeFragment implements BlockingSt
     private File f;
     private  int positionImage;
 
-    private Bitmap[] ImgLocationCard = new Bitmap[7];
+    private Bitmap[] ImgLocationCard = new Bitmap[8];
     private static final int REQUEST_PERMISSION_SETTING = 101;
     private boolean sentToSettings = false;
     private SharedPreferences permissionStatus;
-    private String[] PathImgLocationCard = new String[7];
+    private String[] PathImgLocationCard = new String[8];
 
     @Bind(R.id.Pic1) ImageView Pic1;
     @Bind(R.id.Pic2) ImageView Pic2;
@@ -96,9 +96,6 @@ public class DataStepFragment6 extends ButterKnifeFragment implements BlockingSt
     public String getPathImage(int position){
         return this.PathImgLocationCard[position];
     }
-    public void setBitmapPosition(int position, Bitmap b){
-        ImgLocationCard[position] = b;
-    }
 
     public Bitmap getBitmapPosition(int position){
         return ImgLocationCard[position];
@@ -112,7 +109,18 @@ public class DataStepFragment6 extends ButterKnifeFragment implements BlockingSt
     public  int getImagePosition(){
         return this.positionImage;
     }
+
     public void UpdateImageUi(){
+        switch (this.positionImage){
+            case 1 :  Pic1.setImageBitmap(getBitmapPosition(1)); break;
+            case 2 :  Pic2.setImageBitmap(getBitmapPosition(2)); break;
+            case 3 :  Pic3.setImageBitmap(getBitmapPosition(3)); break;
+            case 4 :  Pic4.setImageBitmap(getBitmapPosition(4)); break;
+            case 5 :  Pic5.setImageBitmap(getBitmapPosition(5)); break;
+            case 6 :  Pic6.setImageBitmap(getBitmapPosition(6)); break;
+            case 7 :  Pic7.setImageBitmap(getBitmapPosition(7)); break;
+            default: break;
+        }
 
     }
 
@@ -173,43 +181,43 @@ public class DataStepFragment6 extends ButterKnifeFragment implements BlockingSt
             case R.id.TakePic1:
                 setImagePosition(1);
                 selectImage("Pic1");
-                Pic1.setImageBitmap(getBitmapPosition(1));
+                //Pic1.setImageBitmap(getBitmapPosition(1));
                 Toast.makeText(getActivity(), "Pic1 ", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.TakePic2:
                 setImagePosition(2);
                 selectImage("Pic2");
-                Pic2.setImageBitmap(getBitmapPosition(2));
+                //Pic2.setImageBitmap(getBitmapPosition(2));
                 Toast.makeText(getActivity(), "Pic2 ", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.TakePic3:
-                setImagePosition(2);
+                setImagePosition(3);
                 selectImage("Pic3");
-                Pic3.setImageBitmap(getBitmapPosition(3));
+                //Pic3.setImageBitmap(getBitmapPosition(3));
                 Toast.makeText(getActivity(), "Pic3 ", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.TakePic4:
                 setImagePosition(4);
                 selectImage("Pic4");
-                Pic4.setImageBitmap(getBitmapPosition(4));
+                //Pic4.setImageBitmap(getBitmapPosition(4));
                 Toast.makeText(getActivity(), "Pic4 ", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.TakePic5:
                 setImagePosition(5);
                 selectImage("Pic5");
                 Pic5.setImageBitmap(getBitmapPosition(5));
-                Toast.makeText(getActivity(), "Pic5 ", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(), "Pic5 ", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.TakePic6:
                 setImagePosition(6);
                 selectImage("Pic6");
-                Pic6.setImageBitmap(getBitmapPosition(6));
+                //Pic6.setImageBitmap(getBitmapPosition(6));
                 Toast.makeText(getActivity(), "Pic6 ", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.TakePic7:
                 setImagePosition(7);
                 selectImage("Pic7");
-                Pic7.setImageBitmap(getBitmapPosition(7));
+                //Pic7.setImageBitmap(getBitmapPosition(7));
                 Toast.makeText(getActivity(), "Pic7 ", Toast.LENGTH_SHORT).show();
                 break;
         }
@@ -295,6 +303,7 @@ public class DataStepFragment6 extends ButterKnifeFragment implements BlockingSt
             try {
                 ImgLocationCard[getImagePosition()] = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), uri);
                 ImgLocationCard[getImagePosition()]= RotateImg.Rotate(getPathImage(getImagePosition()),ImgLocationCard[getImagePosition()]);
+                UpdateImageUi();
                 Log.d("bitmap", "onActivityResult: ");
                 //uploadFromDataInMemory(bitmap);
 //                Pic1.setImageBitmap(ImgLocationCard);
@@ -316,8 +325,8 @@ public class DataStepFragment6 extends ButterKnifeFragment implements BlockingSt
 
                 ImgLocationCard[getImagePosition()] = MediaStore.Images.Media.getBitmap(cr, uri);
                 ImgLocationCard[getImagePosition()] = RotateImg.Rotate(uri.getPath(),ImgLocationCard[getImagePosition()]);
-
                 setPathImage(getImagePosition(),uri.getPath().toString());
+                UpdateImageUi();
                 Log.d("onActivityResult: Path", getPathImage(getImagePosition()));
                 //PathImgLocationCard[getImagePosition()] = uri.getPath();
 //                Pic1.setImageBitmap(ImgLocationCard);

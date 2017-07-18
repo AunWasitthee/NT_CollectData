@@ -12,7 +12,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
+import java.util.concurrent.ExecutionException;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -28,10 +33,20 @@ public class Login_Activity extends AppCompatActivity {
 
         BSignin = (Button) findViewById(R.id.BSignin);
         if(haveNetworkConnection()) {
-            new FeedAsyncTask().execute("http://203.150.245.33:8001/api/underlying_disease");
-            new FeedAsyncTask().execute("http://203.150.245.33:8001/api/foot_disorder");
-            new FeedAsyncTask().execute("http://203.150.245.33:8001/api/material");
-            new FeedAsyncTask().execute("http://203.150.245.33:8001/api/shoebrand");
+
+            try {
+                String[] underlying_disease = new FeedAsyncTask().execute("http://203.150.245.33:8001/api/underlying_disease").get();
+                for(String s : underlying_disease)
+                    System.out.println(s);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+
+//            new FeedAsyncTask().execute("http://203.150.245.33:8001/api/foot_disorder");
+//            new FeedAsyncTask().execute("http://203.150.245.33:8001/api/material");
+//            new FeedAsyncTask().execute("http://203.150.245.33:8001/api/shoebrand");
         }
         WhenClickBSignin();
 
@@ -70,7 +85,7 @@ public class Login_Activity extends AppCompatActivity {
         return haveConnectedWifi||haveConnectedMobile;
     }
 
-    public class FeedAsyncTask extends AsyncTask<String, Void, String>{
+    public class FeedAsyncTask extends AsyncTask<String, Void, String[]>{
         @Override
         protected void onPreExecute(){
             super.onPreExecute();
@@ -79,7 +94,7 @@ public class Login_Activity extends AppCompatActivity {
 
         }
         @Override
-        protected String doInBackground(String... strings) {
+        protected String[] doInBackground(String... strings) {
             // called in custom/background thread
             Log.i("FeedAsyncTask","doInBackground: " + strings[0]);
             final String _url = strings[0];
@@ -88,16 +103,33 @@ public class Login_Activity extends AppCompatActivity {
                 Request request = new Request.Builder().url(_url).build();
 
                 Response response = client.newCall(request).execute();
-                String s = response.body().string();
-                Log.i("FeedAsyncTask",s);
-                return "" + s;
+                JSONObject s = null;
+                JSONArray arr = null;
+                try {
+                    s = new JSONObject(response.body().string());
+                    arr = s.getJSONArray("data");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                Log.i("FeedAsyncTask",s.toString());
+                String[] result = new String[arr.length()];
+                    for(int i = 0; i < arr.length(); i++){
+                        try {
+                            result[i] = arr.getJSONObject(i).getString("title");
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                return result;
             } catch (IOException e) {
                 e.printStackTrace();
             }
             return null;
         }
         @Override
-        protected void onPostExecute(String s){
+        protected void onPostExecute(String[] s){
             super.onPostExecute(s);
             // called after doInBackground
             Log.i("FeedAsyncTask","onPostExecute");
