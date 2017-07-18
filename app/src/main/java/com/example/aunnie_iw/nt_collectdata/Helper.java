@@ -4,9 +4,12 @@ import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.util.Base64;
+import android.view.View;
 
 import java.io.ByteArrayOutputStream;
 
@@ -15,6 +18,7 @@ import java.io.ByteArrayOutputStream;
  */
 
 public class Helper {
+
     public static String getPath(Context context, Uri uri) {
         String[] projection = {MediaStore.Images.Media.DATA};
         Cursor cursor = context.getContentResolver().query(uri, projection, null, null, null);
@@ -42,4 +46,7 @@ public class Helper {
         String imageFile = Base64.encodeToString(byteArray, Base64.DEFAULT);
         return imageFile;
     }
+
+
+
 }

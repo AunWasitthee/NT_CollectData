@@ -1,7 +1,10 @@
 package com.example.aunnie_iw.nt_collectdata;
 
 import android.app.DownloadManager;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,10 +27,12 @@ public class Login_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         BSignin = (Button) findViewById(R.id.BSignin);
-        new FeedAsyncTask().execute("http://203.150.245.33:8001/api/underlying_disease");
-        new FeedAsyncTask().execute("http://203.150.245.33:8001/api/foot_disorder");
-        new FeedAsyncTask().execute("http://203.150.245.33:8001/api/material");
-        new FeedAsyncTask().execute("http://203.150.245.33:8001/api/shoebrand");
+        if(haveNetworkConnection()) {
+            new FeedAsyncTask().execute("http://203.150.245.33:8001/api/underlying_disease");
+            new FeedAsyncTask().execute("http://203.150.245.33:8001/api/foot_disorder");
+            new FeedAsyncTask().execute("http://203.150.245.33:8001/api/material");
+            new FeedAsyncTask().execute("http://203.150.245.33:8001/api/shoebrand");
+        }
         WhenClickBSignin();
 
     }
@@ -41,6 +46,30 @@ public class Login_Activity extends AppCompatActivity {
             }
         });
     }
+
+    public boolean haveNetworkConnection(){
+        boolean haveConnectedWifi = false;
+        boolean haveConnectedMobile = false;
+
+        ConnectivityManager cm = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo[] networkInfos = cm.getAllNetworkInfo();
+        for (NetworkInfo networkInfo : networkInfos){
+            if (networkInfo.getTypeName().equalsIgnoreCase("WIFI")){
+                if (networkInfo.isConnected()){
+                    haveConnectedWifi = true;
+                    Log.d("haveWifi", String.valueOf(networkInfo.isConnected()));
+                }
+            }
+            if (networkInfo.getTypeName().equalsIgnoreCase("MOBILE")) {
+                if (networkInfo.isConnected()) {
+                    haveConnectedMobile = true;
+                    Log.d("haveMobile", String.valueOf(networkInfo.isConnected()));
+                }
+            }
+        }
+        return haveConnectedWifi||haveConnectedMobile;
+    }
+
     public class FeedAsyncTask extends AsyncTask<String, Void, String>{
         @Override
         protected void onPreExecute(){

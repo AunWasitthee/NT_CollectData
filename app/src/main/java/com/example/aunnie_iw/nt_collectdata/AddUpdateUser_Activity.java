@@ -10,6 +10,8 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -98,7 +100,15 @@ public class AddUpdateUser_Activity extends AppCompatActivity implements View.On
                 if (dataObject.getIDcard().equals("")) {
                     Toast.makeText(AddUpdateUser_Activity.this, "onError! -> กรุณากรอกเลขบัตรประชาชน", Toast.LENGTH_SHORT).show();
                 }
-                else {
+                else if(haveNetworkConnection()){
+                    Log.d("haveNetworkConnection()", "Connect");
+                    new FeedAsyncTask().execute("http://203.150.245.33:8001/api/patient");
+
+                }
+//                else if(haveNetworkConnection()){
+//                    Log.d("haveNetworkConnection()", "!!!!Connect");
+//                }
+                else{
 
                     Log.d("onClick: ", E_Search.getText().toString());
                     Intent intent = new Intent(AddUpdateUser_Activity.this, StepAddData_Activity.class);
@@ -277,6 +287,28 @@ public class AddUpdateUser_Activity extends AppCompatActivity implements View.On
 //        Stmsg.setText("");Cid.setText("");NameTH.setText("");Address.setText("");
 //        CreateCard.setText("");NameEng.setText("");Datebirthday.setText("");ExpireCard.setText("");
 //        DateToday.setText("");
+    }
+    public boolean haveNetworkConnection(){
+        boolean haveConnectedWifi = false;
+        boolean haveConnectedMobile = false;
+
+        ConnectivityManager cm = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo[] networkInfos = cm.getAllNetworkInfo();
+        for (NetworkInfo networkInfo : networkInfos){
+            if (networkInfo.getTypeName().equalsIgnoreCase("WIFI")){
+                if (networkInfo.isConnected()){
+                    haveConnectedWifi = true;
+                    Log.d("haveWifi", String.valueOf(networkInfo.isConnected()));
+                }
+            }
+            if (networkInfo.getTypeName().equalsIgnoreCase("MOBILE")) {
+                if (networkInfo.isConnected()) {
+                    haveConnectedMobile = true;
+                    Log.d("haveMobile", String.valueOf(networkInfo.isConnected()));
+                }
+            }
+        }
+        return haveConnectedWifi||haveConnectedMobile;
     }
 
     public class FeedAsyncTask extends AsyncTask<String, Void, String>{
