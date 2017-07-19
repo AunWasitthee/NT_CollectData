@@ -5,6 +5,7 @@ package com.example.aunnie_iw.nt_collectdata.step;
  */
 
 import android.content.Context;
+import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.annotation.UiThread;
 import android.text.Editable;
@@ -21,23 +22,32 @@ import com.stepstone.stepper.BlockingStep;
 import com.stepstone.stepper.StepperLayout;
 import com.stepstone.stepper.VerificationError;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.OnTextChanged;
 
 public class DataStepFragment4 extends ButterKnifeFragment implements BlockingStep {
-    String a;
 
-    String[] array = new String[]{"A","B","C"};
 
     public static DataStepFragment4 newInstance() {
         return new DataStepFragment4();
     }
 
+    //String[] array = new String[]{"A","B","C"};
+    String[] array;
+    private DataManager dataManager;
+    CheckBox[] checkBox;
+    ArrayList<String> dataChecked = new ArrayList<String>();
+    boolean firstTime = true;
 
     @Bind(R.id.checkboxContainerDisease) ViewGroup checkboxContainerDisease;
-    private DataManager dataManager;
+
     @Bind(R.id.E_Hight) EditText E_Hight;
     @Bind(R.id.E_Weight) EditText E_Weight;
     @Bind(R.id.E_BodyMass) EditText E_BodyMass;
@@ -68,13 +78,20 @@ public class DataStepFragment4 extends ButterKnifeFragment implements BlockingSt
     }
     @Override
     public void onSelected() {
-
-        for (int i = 0 ; i <array.length ; i++){
-            CheckBox checkBox = new CheckBox(getActivity());
-            checkBox.setText(array[i]);
-            checkboxContainerDisease.addView(checkBox);
+        if(firstTime){
+            array = readData();
+            checkBox = new CheckBox[array.length];
+            for (int i = 0 ; i <array.length ; i++){
+                checkBox[i] = new CheckBox(getActivity());
+                checkBox[i].setText(array[i]);
+                checkboxContainerDisease.addView(checkBox[i]);
+            }
         }
-
+        else {
+            for(String s : dataChecked){
+                Log.e("Checked",s);
+            }
+        }
     }
 
     @Override
@@ -101,6 +118,13 @@ public class DataStepFragment4 extends ButterKnifeFragment implements BlockingSt
     @Override
     @UiThread
     public void onNextClicked(final StepperLayout.OnNextClickedCallback callback) {
+        firstTime = false;
+        dataChecked.clear();
+        for (int i = 0 ; i <array.length ; i++){
+            if(checkBox[i].isChecked()){
+                dataChecked.add(checkBox[i].getText().toString());
+            }
+        }
         callback.goToNextStep();
     }
 
@@ -118,5 +142,32 @@ public class DataStepFragment4 extends ButterKnifeFragment implements BlockingSt
     @Override
     protected int getLayoutResId() {
         return R.layout.fragment_step4;
+    }
+
+    public  String[] readData(){
+        String path = Environment.getExternalStorageDirectory() + File.separator  + "Database";
+        //Get the text file
+        File file = new File(path,"underlying_disease.txt");
+        //Read text from file
+        //StringBuilder text = new StringBuilder();
+        ArrayList<String> text = new ArrayList<String>();
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                text.add(line);
+            }
+            br.close();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+            //You'll need to add proper error handling here
+        }
+        String[] result = new String[text.size()];
+        for (int i=0 ; i<text.size(); i++){
+            result[i] = text.get(i).toString();
+        }
+        return result;
     }
 }

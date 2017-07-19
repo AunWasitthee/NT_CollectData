@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,7 +17,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.concurrent.ExecutionException;
 
 import okhttp3.OkHttpClient;
@@ -24,7 +28,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class Login_Activity extends AppCompatActivity {
-
+    String[] underlying_disease;
     protected Button BSignin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,26 +39,28 @@ public class Login_Activity extends AppCompatActivity {
         if(haveNetworkConnection()) {
 
             try {
-                String[] underlying_disease = new FeedAsyncTask().execute("http://203.150.245.33:8001/api/underlying_disease","underlying_disease").get();
+                underlying_disease = new FeedAsyncTask().execute("http://203.150.245.33:8001/api/underlying_disease","underlying_disease").get();
 
                 String[] foot_disorder = new FeedAsyncTask().execute("http://203.150.245.33:8001/api/foot_disorder","foot_disorder").get();
                 String[] material = new FeedAsyncTask().execute("http://203.150.245.33:8001/api/material","material").get();
                 String[] shoebrand = new FeedAsyncTask().execute("http://203.150.245.33:8001/api/shoebrand","shoebrand").get();
 
-                for(String s : underlying_disease)
-                    System.out.println(s);
-                for(String s : foot_disorder)
-                    System.out.println(s);
-                for(String s : material)
-                    System.out.println(s);
-                for(String s : shoebrand)
-                    System.out.println(s);
+
+
+//                for(String s : underlying_disease)
+//                    System.out.println(s);
+//                for(String s : foot_disorder)
+//                    System.out.println(s);
+//                for(String s : material)
+//                    System.out.println(s);
+//                for(String s : shoebrand)
+//                    System.out.println(s);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } catch (ExecutionException e) {
                 e.printStackTrace();
             }
-
+            writeToFile(underlying_disease,"underlying_disease");
         }
         WhenClickBSignin();
 
@@ -68,6 +74,41 @@ public class Login_Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+    public void writeToFile(String[] data, String name)
+    {
+        // Get the directory for the user's public pictures directory.
+        String path = Environment.getExternalStorageDirectory() + File.separator  + "Database";
+        // Create the folder.
+        File folder = new File(path);
+
+        // Make sure the path directory exists.
+        if(!folder.exists())
+        {
+            // Make it, if it doesn't exit
+            folder.mkdirs();
+        }
+
+        final File file = new File(path, name+".txt");
+
+        // Save your stream, don't forget to flush() it before closing it.
+
+        try
+        {
+            file.createNewFile();
+            FileOutputStream fOut = new FileOutputStream(file);
+            OutputStreamWriter myOutWriter = new OutputStreamWriter(fOut);
+            for(String s : data){
+                myOutWriter.append(s+"\n");
+            }
+            myOutWriter.close();
+            fOut.flush();
+            fOut.close();
+        }
+        catch (IOException e)
+        {
+            Log.e("Exception", "File write failed: " + e.toString());
+        }
     }
 
     public boolean haveNetworkConnection(){
