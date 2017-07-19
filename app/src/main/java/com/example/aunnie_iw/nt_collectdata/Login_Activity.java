@@ -35,8 +35,19 @@ public class Login_Activity extends AppCompatActivity {
         if(haveNetworkConnection()) {
 
             try {
-                String[] underlying_disease = new FeedAsyncTask().execute("http://203.150.245.33:8001/api/underlying_disease").get();
+                String[] underlying_disease = new FeedAsyncTask().execute("http://203.150.245.33:8001/api/underlying_disease","underlying_disease").get();
+
+                String[] foot_disorder = new FeedAsyncTask().execute("http://203.150.245.33:8001/api/foot_disorder","foot_disorder").get();
+                String[] material = new FeedAsyncTask().execute("http://203.150.245.33:8001/api/material","material").get();
+                String[] shoebrand = new FeedAsyncTask().execute("http://203.150.245.33:8001/api/shoebrand","shoebrand").get();
+
                 for(String s : underlying_disease)
+                    System.out.println(s);
+                for(String s : foot_disorder)
+                    System.out.println(s);
+                for(String s : material)
+                    System.out.println(s);
+                for(String s : shoebrand)
                     System.out.println(s);
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -44,9 +55,6 @@ public class Login_Activity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-//            new FeedAsyncTask().execute("http://203.150.245.33:8001/api/foot_disorder");
-//            new FeedAsyncTask().execute("http://203.150.245.33:8001/api/material");
-//            new FeedAsyncTask().execute("http://203.150.245.33:8001/api/shoebrand");
         }
         WhenClickBSignin();
 
@@ -85,7 +93,7 @@ public class Login_Activity extends AppCompatActivity {
         return haveConnectedWifi||haveConnectedMobile;
     }
 
-    public class FeedAsyncTask extends AsyncTask<String, Void, String[]>{
+    public class FeedAsyncTask extends AsyncTask<String , Void, String[]>{
         @Override
         protected void onPreExecute(){
             super.onPreExecute();
@@ -116,7 +124,12 @@ public class Login_Activity extends AppCompatActivity {
                 String[] result = new String[arr.length()];
                     for(int i = 0; i < arr.length(); i++){
                         try {
-                            result[i] = arr.getJSONObject(i).getString("title");
+                            if (strings[1].equals("underlying_disease")||strings[1].equals("foot_disorder"))
+                                result[i] = arr.getJSONObject(i).getString("title");
+                            else if (strings[1].equals("material"))
+                                result[i] = arr.getJSONObject(i).getString("material_name");
+                            else if (strings[1].equals("shoebrand"))
+                                result[i] = arr.getJSONObject(i).getString("brand_name");
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

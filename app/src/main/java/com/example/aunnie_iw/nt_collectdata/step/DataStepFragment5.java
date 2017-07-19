@@ -27,7 +27,7 @@ public class DataStepFragment5 extends ButterKnifeFragment implements BlockingSt
     }
 
     private DataManager dataManager;
-    @Bind(R.id.checkboxContainer) ViewGroup checkboxContainer;
+    @Bind(R.id.checkboxContainerDisoder) ViewGroup checkboxContainerDisoder;
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -50,7 +50,7 @@ public class DataStepFragment5 extends ButterKnifeFragment implements BlockingSt
         for (int i = 0 ; i <array.length ; i++){
             CheckBox checkBox = new CheckBox(getActivity());
             checkBox.setText(array[i]);
-            checkboxContainer.addView(checkBox);
+            checkboxContainerDisoder.addView(checkBox);
         }
     }
 

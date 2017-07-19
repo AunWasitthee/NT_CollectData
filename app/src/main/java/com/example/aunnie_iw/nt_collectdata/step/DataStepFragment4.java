@@ -10,6 +10,8 @@ import android.support.annotation.UiThread;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -26,10 +28,15 @@ import butterknife.OnTextChanged;
 
 public class DataStepFragment4 extends ButterKnifeFragment implements BlockingStep {
     String a;
+
+    String[] array = new String[]{"A","B","C"};
+
     public static DataStepFragment4 newInstance() {
         return new DataStepFragment4();
     }
 
+
+    @Bind(R.id.checkboxContainerDisease) ViewGroup checkboxContainerDisease;
     private DataManager dataManager;
     @Bind(R.id.E_Hight) EditText E_Hight;
     @Bind(R.id.E_Weight) EditText E_Weight;
@@ -61,6 +68,12 @@ public class DataStepFragment4 extends ButterKnifeFragment implements BlockingSt
     }
     @Override
     public void onSelected() {
+
+        for (int i = 0 ; i <array.length ; i++){
+            CheckBox checkBox = new CheckBox(getActivity());
+            checkBox.setText(array[i]);
+            checkboxContainerDisease.addView(checkBox);
+        }
 
     }
 

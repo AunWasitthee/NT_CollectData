@@ -337,7 +337,7 @@
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
-                            android:text="@string/Soi"
+                            android:text="@string/Building"
                             android:textSize="18sp" />
 
                         <EditText
@@ -347,7 +347,7 @@
 
                             android:layout_weight="1"
                             android:ems="10"
-                            android:hint="@string/Soi"
+                            android:hint="@string/Building"
                             android:inputType="textPersonName" />
 
                     </LinearLayout>

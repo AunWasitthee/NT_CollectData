@@ -141,82 +141,12 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/checkboxContainerDisease"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:layout_marginTop="24dp">
+                        android:layout_marginTop="24dp"
+                        android:orientation="vertical">
 
-                        <CheckBox
-                            android:id="@+id/checkBox8"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/None_Disease"
-                            android:textSize="18sp" />
-
-                        <CheckBox
-                            android:id="@+id/checkBox7"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/Lower_extremity_amputation"
-                            android:textSize="18sp" />
-
-                        <CheckBox
-                            android:id="@+id/checkBox6"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="@string/Neurological_disorders"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:id="@+id/textView19"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="@string/Neurological_disorders_description" />
-
-                        <CheckBox
-                            android:id="@+id/checkBox5"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/Peripheral_vascular_disease"
-                            android:textSize="18sp" />
-
-                        <CheckBox
-                            android:id="@+id/checkBox4"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="@string/Inflammatory_joint_disease"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:id="@+id/textView20"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="@string/Inflammatory_joint_disease_description" />
-
-                        <CheckBox
-                            android:id="@+id/checkBox3"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/Plantar_ulcers"
-                            android:textSize="18sp" />
-
-                        <CheckBox
-                            android:id="@+id/checkBox2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/Previous_foot_surgery"
-                            android:textSize="18sp" />
-
-                        <CheckBox
-                            android:id="@+id/checkBox"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/Other_Disease"
-                            android:textSize="18sp" />
                     </LinearLayout>
 
                 </LinearLayout>
